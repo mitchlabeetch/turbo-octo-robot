@@ -4,6 +4,8 @@ from typing import Literal, Optional
 
 from pydantic import BaseModel, EmailStr
 
+CurrencyCode = Literal["USD", "EUR", "GBP", "JPY", "CAD"]
+
 
 class TenantCreate(BaseModel):
     name: str
@@ -36,7 +38,7 @@ class AccountOut(AccountCreate):
 class InvoiceCreate(BaseModel):
     invoice_number: str
     customer_name: str
-    currency: str
+    currency: CurrencyCode
     total_amount_cents: int
     status: Literal["Draft", "Sent", "Paid", "Overdue", "Cancelled"] = "Draft"
     issued_date: Optional[date] = None

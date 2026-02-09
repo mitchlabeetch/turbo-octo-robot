@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
 
@@ -34,8 +34,8 @@ def create_invoice(
 def list_invoices(
     db: Session = Depends(get_db),
     _admin: User = Depends(require_role("admin")),
-    limit: int = 100,
-    offset: int = 0
+    limit: int = Query(default=100, ge=1, le=1000),
+    offset: int = Query(default=0, ge=0)
 ):
     return db.query(Invoice).order_by(Invoice.id).offset(offset).limit(limit).all()
 

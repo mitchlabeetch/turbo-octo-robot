@@ -152,6 +152,7 @@ class Invoice(Base):
             "status IN ('Draft', 'Sent', 'Paid', 'Overdue', 'Cancelled')",
             name="ck_invoice_status",
         ),
+        CheckConstraint("total_amount_cents >= 0", name="ck_invoice_amount_positive"),
     )
 
     id = Column(Integer, primary_key=True, index=True)

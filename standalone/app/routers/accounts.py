@@ -1,6 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
+from sqlalchemy.sql import or_
 
 from app.auth import require_role
 from app.db import get_db
@@ -17,15 +18,24 @@ def create_account(
     db: Session = Depends(get_db),
     _admin: User = Depends(require_role("admin"))
 ):
+    existing = db.query(Account).filter(
+        or_(Account.name == payload.name, Account.code == payload.code)
+    ).first()
+    if existing:
+        if existing.name == payload.name and existing.code == payload.code:
+            detail = "Account name and code already exist"
+        elif existing.name == payload.name:
+            detail = "Account name already exists"
+        else:
+            detail = "Account code already exists"
+        raise HTTPException(status_code=409, detail=detail)
     account = Account(**payload.model_dump())
     db.add(account)
     try:
         db.commit()
     except IntegrityError:
         db.rollback()
-        raise HTTPException(
-            status_code=409, detail="Account with this name or code already exists"
-        )
+        raise HTTPException(status_code=409, detail="Account already exists")
     db.refresh(account)
     return account
 
@@ -34,8 +44,8 @@ def create_account(
 def list_accounts(
     db: Session = Depends(get_db),
     _admin: User = Depends(require_role("admin")),
-    limit: int = 100,
-    offset: int = 0
+    limit: int = Query(default=100, ge=1, le=1000),
+    offset: int = Query(default=0, ge=0)
 ):
     return db.query(Account).order_by(Account.id).offset(offset).limit(limit).all()
 
