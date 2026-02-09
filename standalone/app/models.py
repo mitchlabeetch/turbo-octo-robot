@@ -124,3 +124,21 @@ class Tenant(Base):
     name = Column(String(255), unique=True, nullable=False)
     slug = Column(String(100), unique=True, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    settings = relationship("TenantSettings", back_populates="tenant", uselist=False)
+
+
+class TenantSettings(Base):
+    __tablename__ = "tenant_settings"
+
+    id = Column(Integer, primary_key=True, index=True)
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), unique=True, nullable=False)
+    brand_name = Column(String(255), nullable=True)
+    logo_url = Column(String(500), nullable=True)
+    primary_color = Column(String(50), nullable=True)
+    locale = Column(String(50), nullable=True)
+    timezone = Column(String(50), nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    tenant = relationship("Tenant", back_populates="settings")

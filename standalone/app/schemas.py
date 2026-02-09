@@ -18,6 +18,28 @@ class TenantOut(TenantCreate):
         from_attributes = True
 
 
+class TenantSettingsBase(BaseModel):
+    brand_name: Optional[str] = None
+    logo_url: Optional[str] = None
+    primary_color: Optional[str] = None
+    locale: Optional[str] = None
+    timezone: Optional[str] = None
+
+
+class TenantSettingsCreate(TenantSettingsBase):
+    pass
+
+
+class TenantSettingsOut(TenantSettingsBase):
+    id: int
+    tenant_id: int
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
 class CompanyCreate(BaseModel):
     name: str
     company_type: Optional[str] = None

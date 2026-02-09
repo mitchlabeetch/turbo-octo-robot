@@ -74,6 +74,10 @@ docker compose up --build
 - `GET /tenants` - List tenants (admin)
 - `GET /tenants/{tenant_id}` - Retrieve tenant (admin)
 
+### Tenant Settings
+- `GET /tenants/{tenant_id}/settings` - Retrieve tenant settings (admin)
+- `PUT /tenants/{tenant_id}/settings` - Create or update tenant settings (admin)
+
 ### Data Room Features (NDA, Watermarks, Access Logs)
 - `POST /shares/documents/{id}` - Create share with NDA/view-only/password options
 - `GET /shares/{token}` - Get share info (status, NDA requirements, expiration)
