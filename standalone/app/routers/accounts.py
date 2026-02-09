@@ -1,7 +1,6 @@
 from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.orm import Session
-from sqlalchemy.sql import or_
 
 from app.auth import require_role
 from app.db import get_db
@@ -18,18 +17,8 @@ def create_account(
     db: Session = Depends(get_db),
     _admin: User = Depends(require_role("admin"))
 ):
-    existing = db.query(Account).filter(
-        or_(Account.name == payload.name, Account.code == payload.code)
-    ).limit(2).all()
-    has_name = False
-    has_code = False
-    for account in existing:
-        if account.name == payload.name:
-            has_name = True
-        if account.code == payload.code:
-            has_code = True
-        if has_name and has_code:
-            break
+    has_name = db.query(Account.id).filter(Account.name == payload.name).first() is not None
+    has_code = db.query(Account.id).filter(Account.code == payload.code).first() is not None
     if has_name or has_code:
         if has_name and has_code:
             detail = "Account name and code already exist"
