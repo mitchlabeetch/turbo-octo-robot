@@ -151,7 +151,8 @@
  "modified_by": "Administrator",
  "module": "M&A Advisory",
  "name": "Deal",
- "naming_rule": "By fieldname",
+ "naming_rule": "By script",
+ "autoname": "Prompt",
  "owner": "Administrator",
  "permissions": [
   {
@@ -181,5 +182,13 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "title_field": "deal_name",
- "track_changes": 1
+ "track_changes": 1,
+ "has_web_view": 0,
+ "allow_import": 1,
+ "allow_rename": 1,
+ "show_name_in_global_search": 1,
+ "search_fields": "deal_name,client,target_company,stage,status",
+ "timeline_field": "creation",
+ "image_field": "",
+ "max_attachments": 50
 }
