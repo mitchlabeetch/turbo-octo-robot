@@ -1,2 +1,21 @@
-frappe>=14.0.0
-erpnext>=14.0.0
+# M&A Advisory ERP - Standalone FastAPI Implementation
+# 
+# This repository contains the modern FastAPI-based M&A Advisory ERP platform.
+# 
+# ACTIVE IMPLEMENTATION (Recommended):
+#   Location: /standalone/
+#   Status: Production Ready (Core CRM + API)
+#   Install: cd standalone && pip install -e .
+#   Tech: FastAPI, SQLAlchemy 2.0, PostgreSQL
+#   Dependencies: See /standalone/pyproject.toml
+#
+# LEGACY (Archived Reference Only):
+#   Location: /ma_advisory/
+#   Status: Deprecated - Not maintained or used
+#   Note: Frappe/ERPNext implementation preserved for historical reference
+#   The standalone app completely replaces this approach
+#
+# For detailed architecture analysis, see:
+#   - CODEBASE_ANALYSIS.md (technical comparison)
+#   - EXECUTIVE_SUMMARY.md (strategic decisions)
+#   - MIGRATION_GUIDE.md (transition documentation)

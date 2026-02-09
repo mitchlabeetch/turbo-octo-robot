@@ -4,18 +4,17 @@ build-backend = "flit_core.buildapi"
 
 [project]
 name = "ma_advisory"
-version = "1.0.0"
-description = "M&A Advisory ERP - A derivative of ERPNext for mid-cap M&A advisory firms"
+version = "2.0.0"
+description = "M&A Advisory CRM+ERP - Modern FastAPI implementation for mid-cap M&A advisory firms"
 authors = [
     {name = "Custom", email = "contact@example.com"}
 ]
 readme = "README.md"
 license = {text = "MIT"}
 requires-python = ">=3.10"
-dependencies = [
-    "frappe>=14.0.0",
-    "erpnext>=14.0.0"
-]
+# Dependencies are in /standalone/ - this is a metapackage documenting the architecture
+# See /standalone/pyproject.toml for actual application dependencies
+dependencies = []
 
 [project.optional-dependencies]
 dev = [

@@ -81,3 +81,72 @@ default_language = "fr"
 app_include_files = [
     "ma_advisory/translations/fr.csv"
 ]
+
+# New Doctypes and Modules (M&A Advisory Enhancements)
+# ---------------------------------------------------
+# Contact Management Module
+fixtures = [
+    {
+        "dt": "DocType",
+        "filters": [
+            ["name", "in", [
+                "MA Company",
+                "MA Company Deal Link",
+                "MA Contact",
+                "MA Interaction",
+                "MA Sector",
+                "MA Document",
+                "MA Document Version"
+            ]]
+        ]
+    }
+]
+
+# Desk Sidebar Configuration
+# ----------------------------
+# New modules and shortcuts
+sidebar_config = {
+    "Contact Management": {
+        "icon": "octicon octicon-person",
+        "color": "green",
+        "items": [
+            {
+                "label": "Companies",
+                "route": "List/MA Company",
+                "icon": "octicon octicon-organization"
+            },
+            {
+                "label": "Contacts",
+                "route": "List/MA Contact",
+                "icon": "octicon octicon-person"
+            },
+            {
+                "label": "Interactions",
+                "route": "List/MA Interaction",
+                "icon": "octicon octicon-comment-discussion"
+            },
+            {
+                "label": "Sectors",
+                "route": "List/MA Sector",
+                "icon": "octicon octicon-tag"
+            }
+        ]
+    },
+    "Document Management": {
+        "icon": "octicon octicon-file-text",
+        "color": "orange",
+        "items": [
+            {
+                "label": "Documents",
+                "route": "List/MA Document",
+                "icon": "octicon octicon-file"
+            }
+        ]
+    }
+}
+
+# Custom Settings
+# ----------------
+# Allow automatic contact enrichment
+enable_contact_enrichment = True
+contact_enrichment_providers = ["clearbit"]  # Will support: clearbit, hunter.io, linkedin

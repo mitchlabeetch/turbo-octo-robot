@@ -1,0 +1,27 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: "postgresql+psycopg2://ma:ma@db:5432/ma_advisory"
+      STORAGE_DIR: "/app/storage"
+      CORS_ORIGINS: "*"
+    volumes:
+      - ./storage:/app/storage
+    depends_on:
+      - db
+
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: ma
+      POSTGRES_PASSWORD: ma
+      POSTGRES_DB: ma_advisory
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

@@ -1,0 +1,67 @@
+{
+  "creation": "2024-01-01T00:00:00.000000",
+  "doctype": "DocType",
+  "document_type": "Child",
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "company",
+    "company_name",
+    "sector",
+    "annual_revenue",
+    "engagement_status",
+    "added_date",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "company",
+      "fieldtype": "Link",
+      "label": "Company",
+      "options": "MA Company",
+      "reqd": 1
+    },
+    {
+      "fieldname": "company_name",
+      "fieldtype": "Data",
+      "label": "Company Name",
+      "read_only": 1
+    },
+    {
+      "fieldname": "sector",
+      "fieldtype": "Link",
+      "label": "Sector",
+      "options": "MA Sector",
+      "read_only": 1
+    },
+    {
+      "fieldname": "annual_revenue",
+      "fieldtype": "Currency",
+      "label": "Annual Revenue",
+      "read_only": 1
+    },
+    {
+      "fieldname": "engagement_status",
+      "fieldtype": "Select",
+      "label": "Engagement Status",
+      "options": "Not Started\nInitial Contact\nAdvanced Discussion\nDeal Won\nNo Deal"
+    },
+    {
+      "fieldname": "added_date",
+      "fieldtype": "Date",
+      "label": "Added to List",
+      "read_only": 1
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Text",
+      "label": "Notes"
+    }
+  ],
+  "istable": 1,
+  "modified": "2024-01-01T00:00:00.000000",
+  "name": "MA Target List Item",
+  "owner": "Administrator",
+  "permissions": [],
+  "quick_entry": 1
+}

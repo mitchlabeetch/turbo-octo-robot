@@ -1,0 +1,1486 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>The Perfect CRM+ERP for M&amp;A Advisory Firms</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'sage': '#87a96b',
+                        'slate': '#475569',
+                        'creme': '#fefcf7',
+                        'charcoal': '#374151'
+                    },
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #87a96b 0%, #475569 100%);
+        }
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
+  <base target="_blank">
+</head>
+
+  <body class="bg-creme font-body text-charcoal smooth-scroll">
+    <!-- Fixed Table of Contents -->
+    <nav id="toc-nav" class="fixed left-0 top-0 h-screen w-80 glass-effect border-r border-sage/20 overflow-y-auto z-40 transform -translate-x-full lg:translate-x-0 transition-transform duration-300">
+      <div class="p-6">
+        <h3 class="font-display text-lg font-semibold text-slate mb-4">Table of Contents</h3>
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="#executive-summary" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Executive Summary</a>
+          </li>
+          <li>
+            <a href="#market-gap" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Market Gap Analysis</a>
+          </li>
+          <li>
+            <a href="#firm-profile" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">M&amp;A Firm Profile</a>
+          </li>
+          <li>
+            <a href="#crm-requirements" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">CRM Requirements</a>
+          </li>
+          <li>
+            <a href="#erp-requirements" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">ERP Requirements</a>
+          </li>
+          <li>
+            <a href="#international" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">International Capabilities</a>
+          </li>
+          <li>
+            <a href="#ux-design" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">UX &amp; Interface Design</a>
+          </li>
+          <li>
+            <a href="#technical-architecture" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Technical Architecture</a>
+          </li>
+          <li>
+            <a href="#licensing" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Licensing &amp; Pricing</a>
+          </li>
+          <li>
+            <a href="#vendor-support" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Vendor Support</a>
+          </li>
+          <li>
+            <a href="#competitive-analysis" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Competitive Analysis</a>
+          </li>
+          <li>
+            <a href="#implementation" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Implementation Roadmap</a>
+          </li>
+          <li>
+            <a href="#future-evolution" class="block py-2 px-3 rounded hover:bg-sage/10 transition-colors">Future Evolution</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Toggle button for mobile -->
+    <button id="toc-toggle" class="fixed top-4 left-4 z-50 lg:hidden bg-sage text-white p-2 rounded-lg shadow-lg">
+      <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Main Content -->
+    <main class="lg:ml-80 min-h-screen">
+      <!-- Hero Section -->
+      <section class="hero-gradient text-white relative overflow-hidden">
+        <div class="absolute inset-0 bg-black/20"></div>
+        <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            <!-- Hero Text -->
+            <div class="lg:col-span-7">
+              <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 text-shadow italic">
+                The Perfect CRM+ERP for M&amp;A Advisory Firms
+              </h1>
+              <p class="text-xl mb-8 text-shadow opacity-90">
+                A comprehensive specification for the unified platform that merges relationship intelligence with financial operations
+              </p>
+              <div class="flex flex-wrap gap-4 text-sm">
+                <span class="bg-white/20 px-4 py-2 rounded-full"><i class="fas fa-users mr-2"></i>1-100 Employees</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full"><i class="fas fa-globe mr-2"></i>Multi-Currency</span>
+                <span class="bg-white/20 px-4 py-2 rounded-full"><i class="fas fa-language mr-2"></i>Multi-Language</span>
+              </div>
+            </div>
+
+            <!-- Key Highlights Grid -->
+            <div class="lg:col-span-5">
+              <div class="grid grid-cols-1 gap-4">
+                <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+                  <h3 class="font-display text-lg font-semibold mb-2">Market Gap Identified</h3>
+                  <p class="text-sm opacity-90">No purpose-built, open-source CRM+ERP solution exists for M&amp;A advisory firms, creating critical operational inefficiency.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+                  <h3 class="font-display text-lg font-semibold mb-2">Unified Platform Vision</h3>
+                  <p class="text-sm opacity-90">Comprehensive integration of deal lifecycle management with firm operations in one seamless system.</p>
+                </div>
+                <div class="bg-white/10 backdrop-blur p-6 rounded-lg">
+                  <h3 class="font-display text-lg font-semibold mb-2">Global Ready</h3>
+                  <p class="text-sm opacity-90">Built for international operations with multi-language, multi-currency, and multi-jurisdiction capabilities.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Executive Summary -->
+      <section id="executive-summary" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Executive Summary</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div>
+              <h3 class="font-display text-xl font-semibold mb-4">Critical Market Void</h3>
+              <p class="mb-6 text-gray-700 leading-relaxed">
+                Extensive research across established platforms—including <strong>Odoo, ERPNext, Dolibarr, Flectra, Strapi, Notion, and Pipedrive</strong>—demonstrates a critical void in the software landscape: <em>no purpose-built, open-source solution exists that specifically addresses the unique operational requirements of mergers and acquisitions advisory firms</em>.
+              </p>
+
+              <h3 class="font-display text-xl font-semibold mb-4">Fragmentation Crisis</h3>
+              <p class="mb-6 text-gray-700 leading-relaxed">
+                The current software landscape forces M&amp;A advisory firms into an uncomfortable binary: either adopt specialized CRM tools that excel at relationship management but lack financial depth, or implement comprehensive ERP systems that require extensive customization for deal-specific workflows.
+              </p>
+            </div>
+
+            <div>
+              <div class="bg-sage/10 p-6 rounded-lg mb-8">
+                <h3 class="font-display text-xl font-semibold mb-4">Key Statistics</h3>
+                <ul class="space-y-3 text-gray-700">
+                  <li class="flex items-center"><i class="fas fa-chart-bar text-sage mr-3"></i>85% of M&amp;A transactions have license conflicts</li>
+                  <li class="flex items-center"><i class="fas fa-shield-alt text-sage mr-3"></i>96% contain unpatched vulnerabilities</li>
+                  <li class="flex items-center"><i class="fas fa-clock text-sage mr-3"></i>94% faster invoice preparation achievable</li>
+                  <li class="flex items-center"><i class="fas fa-users text-sage mr-3"></i>23-minute client inquiry response times documented</li>
+                </ul>
+              </div>
+
+              <h3 class="font-display text-xl font-semibold mb-4">The Solution</h3>
+              <p class="text-gray-700 leading-relaxed">
+                A unified CRM+ERP platform that eliminates artificial boundaries between deal execution and firm management, supporting the complete M&amp;A lifecycle from origination through post-transaction integration while providing comprehensive financial and operational management capabilities.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Market Gap Analysis -->
+      <section id="market-gap" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Market Gap Analysis</h2>
+
+          <div class="mb-12">
+            <h3 class="font-display text-xl font-semibold mb-6">Fragmentation Between CRM and ERP Functions</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white rounded-lg shadow-sm">
+                <thead class="bg-sage text-white">
+                  <tr>
+                    <th class="px-6 py-4 text-left">Dimension</th>
+                    <th class="px-6 py-4 text-left">CRM-Only Solutions</th>
+                    <th class="px-6 py-4 text-left">ERP-Only Solutions</th>
+                    <th class="px-6 py-4 text-left">Integration Challenge</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr>
+                    <td class="px-6 py-4 font-medium">Data Model</td>
+                    <td class="px-6 py-4">Contact-centric, relationship-focused</td>
+                    <td class="px-6 py-4">Transaction-centric, account-focused</td>
+                    <td class="px-6 py-4">No unified entity model for clients, deals, and financials</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-6 py-4 font-medium">Workflow Engine</td>
+                    <td class="px-6 py-4">Sales pipeline stages</td>
+                    <td class="px-6 py-4">Business process automation</td>
+                    <td class="px-6 py-4">Deal execution spans both relationship and financial milestones</td>
+                  </tr>
+                  <tr>
+                    <td class="px-6 py-4 font-medium">Reporting</td>
+                    <td class="px-6 py-4">Pipeline, activity metrics</td>
+                    <td class="px-6 py-4">Financial statements, operational KPIs</td>
+                    <td class="px-6 py-4">No consolidated view of firm performance</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-6 py-4 font-medium">User Experience</td>
+                    <td class="px-6 py-4">Designed for sales teams</td>
+                    <td class="px-6 py-4">Designed for operations/finance</td>
+                    <td class="px-6 py-4">Context switching, duplicate data entry</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="font-display text-lg font-semibold mb-3">CRM-Only Limitations</h4>
+              <p class="text-gray-700 text-sm mb-4">
+                <strong>Pipedrive</strong> user reviews consistently note: &#34;Great for sales pipelines but lacks depth needed for complex M&amp;A transactions&#34; and &#34;Reporting is basic—don&#39;t expect sophisticated financial analysis.&#34;
+              </p>
+              <div class="text-xs text-gray-500">
+                <a href="https://www.pipedrive.com/en/pipedrive-reviews" class="text-sage hover:underline">[Source: Pipedrive Reviews]</a>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="font-display text-lg font-semibold mb-3">ERP-Only Challenges</h4>
+              <p class="text-gray-700 text-sm mb-4">
+                <strong>ERPNext</strong> provides comprehensive ERP functionality but its CRM module is &#34;generic&#34; and &#34;lacking industry-specific workflows,&#34; requiring 3-9 months of custom development.
+              </p>
+              <div class="text-xs text-gray-500">
+                <a href="https://www.cudio.com/blog/erpnext-vs-odoo" class="text-sage hover:underline">[Source: ERPNext Review]</a>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h4 class="font-display text-lg font-semibold mb-3">Hybrid Challenges</h4>
+              <p class="text-gray-700 text-sm mb-4">
+                <strong>Odoo</strong> offers the closest integration but requires &#34;significant customization through specialized partners&#34; for M&amp;A workflows, with enterprise pricing complexity.
+              </p>
+              <div class="text-xs text-gray-500">
+                <a href="https://bachasoftware.com/blog/insights-2/odoo-crm-customization-703" class="text-sage hover:underline">[Source: Odoo Customization]</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- M&amp;A Firm Profile -->
+      <section id="firm-profile" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">M&amp;A Advisory Firm Profile</h2>
+
+          <div class="mb-12">
+            <h3 class="font-display text-xl font-semibold mb-6">Organizational Characteristics by Size</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white rounded-lg shadow-sm text-sm">
+                <thead class="bg-slate text-white">
+                  <tr>
+                    <th class="px-4 py-3 text-left">Firm Size</th>
+                    <th class="px-4 py-3 text-left">Primary Users</th>
+                    <th class="px-4 py-3 text-left">Key Pain Points</th>
+                    <th class="px-4 py-3 text-left">Critical Features</th>
+                    <th class="px-4 py-3 text-left">Price Sensitivity</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200">
+                  <tr class="bg-blue-50/30">
+                    <td class="px-4 py-3 font-medium">1-5</td>
+                    <td class="px-4 py-3">Managing Directors/Partners</td>
+                    <td class="px-4 py-3">Time management, mobility, client communication</td>
+                    <td class="px-4 py-3">Mobile-first design, automated data capture, simple reporting</td>
+                    <td class="px-4 py-3 text-red-600 font-medium">High—personal investment</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">6-15</td>
+                    <td class="px-4 py-3">Partners + Associates + Support</td>
+                    <td class="px-4 py-3">Coordination, knowledge sharing, quality control</td>
+                    <td class="px-4 py-3">Workflow automation, document templates, team visibility</td>
+                    <td class="px-4 py-3 text-yellow-600 font-medium">Moderate—growth investment</td>
+                  </tr>
+                  <tr class="bg-blue-50/30">
+                    <td class="px-4 py-3 font-medium">16-50</td>
+                    <td class="px-4 py-3">Specialized teams</td>
+                    <td class="px-4 py-3">Process standardization, performance management, training</td>
+                    <td class="px-4 py-3">Advanced analytics, role-based permissions, integration ecosystem</td>
+                    <td class="px-4 py-3 text-yellow-600 font-medium">Moderate—operational efficiency</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">51-100</td>
+                    <td class="px-4 py-3">Full organizational structure</td>
+                    <td class="px-4 py-3">Strategic planning, multi-office coordination, compliance</td>
+                    <td class="px-4 py-3">Enterprise reporting, data governance, advanced security</td>
+                    <td class="px-4 py-3 text-green-600 font-medium">Lower—institutional budget</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-display text-lg font-semibold mb-4">Hybrid Operating Models</h4>
+              <p class="text-gray-700 mb-4">
+                M&amp;A advisory firms frequently exhibit hybrid operational characteristics—national presence with international reach. A firm may maintain primary operations in one country while advising on cross-border transactions and serving international clients.
+              </p>
+              <div class="text-sm text-gray-600">
+                <p><strong>ALTIOS Case Study:</strong> 750+ experts across 40 offices in major global markets, requiring significant customization for Odoo implementation.</p>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h4 class="font-display text-lg font-semibold mb-4">Practice Area Diversity</h4>
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="flex items-start"><i class="fas fa-arrow-right text-sage mr-2 mt-1"></i><strong>Sell-side specialization:</strong> Buyer list management, teaser distribution, auction process support</li>
+                <li class="flex items-start"><i class="fas fa-arrow-right text-sage mr-2 mt-1"></i><strong>Buy-side advisory:</strong> Target identification, comparable transaction databases, integration planning</li>
+                <li class="flex items-start"><i class="fas fa-arrow-right text-sage mr-2 mt-1"></i><strong>Dual mandates:</strong> Complex conflict management, information barrier requirements</li>
+                <li class="flex items-start"><i class="fas fa-arrow-right text-sage mr-2 mt-1"></i><strong>Sector specialization:</strong> Industry-specific data models, valuation methodologies</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CRM Requirements -->
+      <section id="crm-requirements" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">CRM Functional Requirements</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-network-wired text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Relationship Intelligence</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Automated contact capture and enrichment</li>
+                <li>• Relationship mapping and network visualization</li>
+                <li>• Interaction history across all touchpoints</li>
+                <li>• Warm introduction pathfinding</li>
+                <li>• Referral tracking and attribution</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-tasks text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Deal Pipeline Management</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Customizable M&amp;A deal stages</li>
+                <li>• Probability-weighted revenue forecasting</li>
+                <li>• Buyer/seller list management</li>
+                <li>• Competitive positioning intelligence</li>
+                <li>• Market data integration</li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-comments text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Communication &amp; Collaboration</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700">
+                <li>• Native email integration with AI summarization</li>
+                <li>• Shared inboxes and delegation workflows</li>
+                <li>• Meeting scheduling with automated follow-ups</li>
+                <li>• Internal notes and @mentions</li>
+                <li>• Team collaboration tools</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+            <h3 class="font-display text-xl font-semibold mb-6">M&amp;A Deal Stage Configuration</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div class="border-l-4 border-sage pl-4">
+                <h4 class="font-semibold mb-2">Origination &amp; Sourcing</h4>
+                <p class="text-sm text-gray-600 mb-2">Target identification, relationship-driven deal flow generation</p>
+                <ul class="text-xs text-gray-500 space-y-1">
+                  <li>• Company screening and alerts</li>
+                  <li>• Relationship path analysis</li>
+                  <li>• Outreach effectiveness tracking</li>
+                </ul>
+              </div>
+              <div class="border-l-4 border-sage pl-4">
+                <h4 class="font-semibold mb-2">Mandate Execution</h4>
+                <p class="text-sm text-gray-600 mb-2">6-18 month process from engagement to closing</p>
+                <ul class="text-xs text-gray-500 space-y-1">
+                  <li>• Teaser and IM development</li>
+                  <li>• Buyer identification and outreach</li>
+                  <li>• Due diligence coordination</li>
+                  <li>• Negotiation support</li>
+                </ul>
+              </div>
+              <div class="border-l-4 border-sage pl-4">
+                <h4 class="font-semibold mb-2">Post-Transaction</h4>
+                <p class="text-sm text-gray-600 mb-2">Integration support and ongoing advisory</p>
+                <ul class="text-xs text-gray-500 space-y-1">
+                  <li>• Integration milestone tracking</li>
+                  <li>• Earnout monitoring</li>
+                  <li>• Relationship continuity</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ERP Requirements -->
+      <section id="erp-requirements" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">ERP Functional Requirements</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-display text-xl font-semibold mb-4">Financial Management</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-coins text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Multi-Currency Accounting</h4>
+                    <p class="text-xs text-gray-600">150+ currencies with real-time exchange rates, automated gain/loss calculation</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-chart-line text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Project-Based Cost Tracking</h4>
+                    <p class="text-xs text-gray-600">Mandate-specific profitability analysis with time and expense attribution</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-receipt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Revenue Recognition</h4>
+                    <p class="text-xs text-gray-600">Retainers, success fees, milestone payments with automated scheduling</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-file-invoice text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Automated Invoicing</h4>
+                    <p class="text-xs text-gray-600">Time-based billing with payment collection workflows</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-display text-xl font-semibold mb-4">Resource Management</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-users-cog text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Staff Allocation &amp; Capacity Planning</h4>
+                    <p class="text-xs text-gray-600">Cross-mandate resource visibility with utilization forecasting</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-clock text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Time Tracking</h4>
+                    <p class="text-xs text-gray-600">Billable vs. non-billable categorization with mobile capture</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-tasks text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Task &amp; Deadline Management</h4>
+                    <p class="text-xs text-gray-600">Critical path visualization with dependency management</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-tachometer-alt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Performance Metrics</h4>
+                    <p class="text-xs text-gray-600">Utilization rates, deal velocity, win rates by source</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="font-display text-xl font-semibold mb-6">Multi-Currency Financial Operations</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div class="text-center">
+                <div class="bg-sage text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-globe text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-2">Global Operations</h4>
+                <p class="text-sm text-gray-600">Support for 150+ active currencies with real-time rate feeds from authoritative sources</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-slate text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-exchange-alt text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-2">Exchange Management</h4>
+                <p class="text-sm text-gray-600">Automated gain/loss calculation with historical rate tracking for transaction accuracy</p>
+              </div>
+              <div class="text-center">
+                <div class="bg-charcoal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-shield-alt text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-2">Risk Mitigation</h4>
+                <p class="text-sm text-gray-600">Hedging documentation and currency risk management for international transactions</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- International Capabilities -->
+      <section id="international" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">International &amp; Multi-Jurisdictional Capabilities</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-language text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Language &amp; Localization</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>• Core support for 20+ languages</li>
+                <li>• Right-to-left language support (Arabic, Hebrew)</li>
+                <li>• Region-specific formats (date, number, address)</li>
+                <li>• Localized template libraries</li>
+              </ul>
+              <div class="text-xs text-gray-500">
+                Community contribution model for continuous expansion
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-coins text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Currency &amp; Financial Globalization</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>• 150+ active currencies</li>
+                <li>• Automated exchange rate updates</li>
+                <li>• Hedging and multi-currency accounts</li>
+                <li>• Transfer pricing documentation</li>
+              </ul>
+              <div class="text-xs text-gray-500">
+                Real-time feeds from authoritative sources
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-database text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Data Residency &amp; Compliance</h3>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700 mb-4">
+                <li>• Regional deployment options (EU, Americas, APAC, ME)</li>
+                <li>• Data sovereignty controls</li>
+                <li>• SOC 2, ISO 27001 certifications</li>
+                <li>• GDPR compliance tools</li>
+              </ul>
+              <div class="text-xs text-gray-500">
+                Cross-border transfer mechanisms
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+            <h3 class="font-display text-xl font-semibold mb-6">Global M&amp;A Deal Flow Examples</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center p-4 border rounded-lg">
+                <div class="text-2xl font-bold text-sage mb-2">$2.2B</div>
+                <div class="text-sm font-medium">UAE-G42 Transactions</div>
+                <div class="text-xs text-gray-500">Cross-border technology deals</div>
+              </div>
+              <div class="text-center p-4 border rounded-lg">
+                <div class="text-2xl font-bold text-sage mb-2">50+</div>
+                <div class="text-sm font-medium">Boutique Firms</div>
+                <div class="text-xs text-gray-500">Using Dialllog across Europe, US, Asia</div>
+              </div>
+              <div class="text-center p-4 border rounded-lg">
+                <div class="text-2xl font-bold text-sage mb-2">40</div>
+                <div class="text-sm font-medium">Global Offices</div>
+                <div class="text-xs text-gray-500">ALTIOS with 750+ experts</div>
+              </div>
+              <div class="text-center p-4 border rounded-lg">
+                <div class="text-2xl font-bold text-sage mb-2">38</div>
+                <div class="text-sm font-medium">Languages</div>
+                <div class="text-xs text-gray-500">SugarCRM multilingual support</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- UX Design -->
+      <section id="ux-design" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">User Experience &amp; Interface Design</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-display text-xl font-semibold mb-4">Core UX Principles</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-brain text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Minimal Cognitive Load</h4>
+                    <p class="text-xs text-gray-600">Context-aware interface simplification presenting relevant information without distraction</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-user-shield text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Role-Based Dashboards</h4>
+                    <p class="text-xs text-gray-600">Managing Partner, Deal Lead, Analyst, Operations views optimized for role needs</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-mobile-alt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Mobile-First Design</h4>
+                    <p class="text-xs text-gray-600">Full-featured mobile applications with offline functionality for client meetings</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-sync-alt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Seamless Synchronization</h4>
+                    <p class="text-xs text-gray-600">Offline functionality with intelligent conflict resolution upon reconnection</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-display text-xl font-semibold mb-4">Role-Based Dashboard Elements</h3>
+              <div class="space-y-3 text-sm">
+                <div class="border-l-4 border-sage pl-3">
+                  <strong>Managing Partner:</strong> Revenue forecasts, team utilization, key relationship health, exception alerts
+                </div>
+                <div class="border-l-4 border-slate pl-3">
+                  <strong>Deal Lead:</strong> Deal status, upcoming deadlines, team workload, client communication
+                </div>
+                <div class="border-l-4 border-charcoal pl-3">
+                  <strong>Analyst:</strong> Assigned tasks, document requirements, research tools, learning resources
+                </div>
+                <div class="border-l-4 border-sage pl-3">
+                  <strong>Operations:</strong> System health, compliance metrics, training status, vendor management
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg mb-8">
+            <h3 class="font-display text-xl font-semibold mb-6">Accessibility &amp; Inclusivity Standards</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+              <div>
+                <div class="bg-sage text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-universal-access text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-2">WCAG 2.1 AA</h4>
+                <p class="text-sm text-gray-600">Full compliance with accessibility standards for perceivability, operability, understandability</p>
+              </div>
+              <div>
+                <div class="bg-slate text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-keyboard text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-2">Keyboard Navigation</h4>
+                <p class="text-sm text-gray-600">Complete functionality without mouse dependency, optimized for screen readers</p>
+              </div>
+              <div>
+                <div class="bg-charcoal text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <i class="fas fa-text-height text-2xl"></i>
+                </div>
+                <h4 class="font-semibold mb-2">Customizable Display</h4>
+                <p class="text-sm text-gray-600">Adjustable contrast and font size settings with preserved layout functionality</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Architecture -->
+      <section id="technical-architecture" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Technical Architecture &amp; Integration</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-xl font-semibold mb-4">Platform Foundation</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-cubes text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Modular Microservices Architecture</h4>
+                    <p class="text-xs text-gray-600">Selective feature activation with independent deployment, scaling, and maintenance</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-plug text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">API-First Design</h4>
+                    <p class="text-xs text-gray-600">Comprehensive REST and GraphQL endpoints with consistent design patterns</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-broadcast-tower text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Event-Driven Real-Time Updates</h4>
+                    <p class="text-xs text-gray-600">Change propagation across all clients for collaborative consistency</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-docker text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Containerized Deployment</h4>
+                    <p class="text-xs text-gray-600">Docker/Kubernetes support for scalable, consistent deployment</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-xl font-semibold mb-4">Security &amp; Data Protection</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-lock text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">End-to-End Encryption</h4>
+                    <p class="text-xs text-gray-600">TLS 1.3 for transit, AES-256 for data at rest with key management</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-shield-alt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Zero-Trust Architecture</h4>
+                    <p class="text-xs text-gray-600">Multi-factor authentication with risk-based step-up verification</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-user-lock text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Granular Role-Based Access</h4>
+                    <p class="text-xs text-gray-600">Field-level permissions with dynamic authorization based on context</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-history text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Immutable Audit Logging</h4>
+                    <p class="text-xs text-gray-600">Tamper-evident activity records with cryptographic verification</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+            <h3 class="font-display text-xl font-semibold mb-6">Integration Ecosystem</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div class="text-center p-4 border rounded-lg">
+                <i class="fas fa-envelope text-sage text-3xl mb-3"></i>
+                <h4 class="font-semibold text-sm mb-2">Email &amp; Calendar</h4>
+                <p class="text-xs text-gray-600">Gmail, Outlook, Exchange native connectors</p>
+              </div>
+              <div class="text-center p-4 border rounded-lg">
+                <i class="fas fa-file-alt text-sage text-3xl mb-3"></i>
+                <h4 class="font-semibold text-sm mb-2">Financial Systems</h4>
+                <p class="text-xs text-gray-600">QuickBooks, Xero, Sage, regional ERPs</p>
+              </div>
+              <div class="text-center p-4 border rounded-lg">
+                <i class="fas fa-database text-sage text-3xl mb-3"></i>
+                <h4 class="font-semibold text-sm mb-2">Data Rooms</h4>
+                <p class="text-xs text-gray-600">Datasite, Intralinks, DealRoom APIs</p>
+              </div>
+              <div class="text-center p-4 border rounded-lg">
+                <i class="fas fa-chart-bar text-sage text-3xl mb-3"></i>
+                <h4 class="font-semibold text-sm mb-2">Business Intelligence</h4>
+                <p class="text-xs text-gray-600">Data warehouse and BI tool connectors</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Licensing -->
+      <section id="licensing" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Licensing Models &amp; Pricing Framework</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-sage/10 p-6 rounded-lg border-2 border-sage">
+              <div class="flex items-center mb-4">
+                <i class="fab fa-osi text-sage text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Open-Source Edition</h3>
+              </div>
+              <div class="mb-4">
+                <div class="text-2xl font-bold text-sage">Free</div>
+                <div class="text-sm text-gray-600">Infrastructure costs only</div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i>Core CRM+ERP functionality</li>
+                <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i>OSI-approved license (LGPL/AGPL)</li>
+                <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i>Self-hosted deployment</li>
+                <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i>Community support</li>
+                <li class="flex items-center"><i class="fas fa-check text-sage mr-2"></i>Source code access</li>
+              </ul>
+              <div class="text-xs text-gray-500">
+                Ideal for: Firms with technical expertise seeking maximum control and customization
+              </div>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-cloud text-blue-600 text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Professional Tier</h3>
+              </div>
+              <div class="mb-4">
+                <div class="text-2xl font-bold text-blue-600">$50-100</div>
+                <div class="text-sm text-gray-600">Per user/month</div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Hosted SaaS</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Standard support</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Core CRM+ERP features</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>1-25 employees</li>
+                <li class="flex items-center"><i class="fas fa-check text-blue-600 mr-2"></i>Automatic updates</li>
+              </ul>
+              <div class="text-xs text-gray-500">
+                Target: 1-25 employee firms seeking managed solution
+              </div>
+            </div>
+
+            <div class="bg-purple-50 p-6 rounded-lg border border-purple-200">
+              <div class="flex items-center mb-4">
+                <i class="fas fa-building text-purple-600 text-2xl mr-3"></i>
+                <h3 class="font-display text-lg font-semibold">Enterprise Tier</h3>
+              </div>
+              <div class="mb-4">
+                <div class="text-2xl font-bold text-purple-600">$150-400</div>
+                <div class="text-sm text-gray-600">Per user/month</div>
+              </div>
+              <ul class="space-y-2 text-sm text-gray-700 mb-6">
+                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Dedicated infrastructure</li>
+                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Premium support</li>
+                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>SLA guarantees</li>
+                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>50-100+ employees</li>
+                <li class="flex items-center"><i class="fas fa-check text-purple-600 mr-2"></i>Professional services</li>
+              </ul>
+              <div class="text-xs text-gray-500">
+                Target: Large firms requiring dedicated resources and SLAs
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg">
+            <h3 class="font-display text-xl font-semibold mb-6">Pricing Benchmark Analysis</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white rounded-lg shadow-sm">
+                <thead class="bg-slate text-white">
+                  <tr>
+                    <th class="px-4 py-3 text-left">Platform</th>
+                    <th class="px-4 py-3 text-left">Category</th>
+                    <th class="px-4 py-3 text-left">CRM Strength</th>
+                    <th class="px-4 py-3 text-left">ERP Strength</th>
+                    <th class="px-4 py-3 text-left">M&amp;A-Specific</th>
+                    <th class="px-4 py-3 text-left">Price Range</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 text-sm">
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Dialllog</td>
+                    <td class="px-4 py-3">M&amp;A CRM</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3">Undisclosed</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-4 py-3 font-medium">4Degrees</td>
+                    <td class="px-4 py-3">M&amp;A CRM</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3">~$250/user/month</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Affinity</td>
+                    <td class="px-4 py-3">Relationship CRM</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-yellow-600">Moderate</td>
+                    <td class="px-4 py-3">$2,000+/user/year</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-4 py-3 font-medium">Odoo</td>
+                    <td class="px-4 py-3">ERP+CRM</td>
+                    <td class="px-4 py-3 text-yellow-600">Moderate</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">Requires custom</td>
+                    <td class="px-4 py-3">€14.80-29.90/user/month + implementation</td>
+                  </tr>
+                  <tr class="bg-green-50 border-2 border-green-200">
+                    <td class="px-4 py-3 font-bold">Ideal Platform</td>
+                    <td class="px-4 py-3 font-bold">Unified CRM+ERP</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 font-bold text-green-600">$50-400/user/month</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="text-xs text-gray-500 mt-4">
+              <a href="https://www.4degrees.ai/blog/private-equity-crm-pricing-explained-2026-guide-to-crm-costs-in-private-markets" class="text-sage hover:underline">[Source: 4Degrees Pricing Analysis]</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Vendor Support -->
+      <section id="vendor-support" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Vendor Support &amp; Ecosystem</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-lg font-semibold mb-4">Support Structure</h3>
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-users text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Tiered Support:</strong> Community forums, standard tickets, dedicated account management
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-globe text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Global Coverage:</strong> Follow-the-sun with regional language support
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-clock text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Guaranteed Response:</strong> SLA-based response times by severity level
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-heartbeat text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Proactive Monitoring:</strong> Health checks for enterprise deployments
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-lg font-semibold mb-4">Implementation Services</h3>
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-handshake text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Certified Partner Network:</strong> Localized deployment expertise
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-cogs text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Industry-Specific Methodology:</strong> M&amp;A advisory implementation approach
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-exchange-alt text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Data Migration:</strong> Legacy CRM/ERP system transition support
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-graduation-cap text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Training Programs:</strong> Self-paced, instructor-led, certification paths
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-lg font-semibold mb-4">Community &amp; Ecosystem</h3>
+              <ul class="space-y-3 text-sm text-gray-700">
+                <li class="flex items-start">
+                  <i class="fas fa-code-branch text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Open-Source Community:</strong> Active contributor ecosystem
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-store text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Marketplace:</strong> Industry-specific extensions and integrations
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-calendar-alt text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Annual Conference:</strong> User conference and regional meetups
+                  </div>
+                </li>
+                <li class="flex items-start">
+                  <i class="fas fa-users-cog text-sage mr-2 mt-1"></i>
+                  <div>
+                    <strong>Advisory Board:</strong> M&amp;A industry practitioner guidance
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm">
+            <h3 class="font-display text-xl font-semibold mb-6">Support Quality Benchmarks</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div>
+                <h4 class="font-semibold mb-4 text-red-600">Current Market Challenges</h4>
+                <div class="space-y-3 text-sm text-gray-700">
+                  <div class="p-3 bg-red-50 rounded border-l-4 border-red-500">
+                    <strong>4Degrees Support Issues:</strong> &#34;Customer support can be slow to respond at times&#34; with &#34;limited customer support hours&#34;
+                  </div>
+                  <div class="p-3 bg-red-50 rounded border-l-4 border-red-500">
+                    <strong>Interface Complexity:</strong> &#34;The interface can be overwhelming for new users&#34; with &#34;a steep learning curve&#34;
+                  </div>
+                  <div class="p-3 bg-red-50 rounded border-l-4 border-red-500">
+                    <strong>Technical Issues:</strong> &#34;Syncing issues with certain email providers&#34; affecting reliability
+                  </div>
+                </div>
+                <div class="text-xs text-gray-500 mt-3">
+                  <a href="https://www.zigpoll.com/content/how-can-we-ensure-accurate-currency-conversion-and-consolidation-when-integrating-financial-data-from-multiple-international-subsidiaries-during-the-merger-process" class="text-sage hover:underline">[Source: User Feedback Analysis]</a>
+                </div>
+              </div>
+
+              <div>
+                <h4 class="font-semibold mb-4 text-green-600">Proposed Solution Standards</h4>
+                <div class="space-y-3 text-sm text-gray-700">
+                  <div class="p-3 bg-green-50 rounded border-l-4 border-green-500">
+                    <strong>Multi-Tier Support:</strong> Clear escalation paths with defined response SLAs
+                  </div>
+                  <div class="p-3 bg-green-50 rounded border-l-4 border-green-500">
+                    <strong>24/7 Global Coverage:</strong> Follow-the-sun model with regional language support
+                  </div>
+                  <div class="p-3 bg-green-50 rounded border-l-4 border-green-500">
+                    <strong>Proactive Monitoring:</strong> Automated health checks with optimization recommendations
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Competitive Analysis -->
+      <section id="competitive-analysis" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Competitive Landscape &amp; Differentiation</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+            <div class="bg-red-50 p-6 rounded-lg border border-red-200">
+              <h3 class="font-display text-lg font-semibold mb-4 text-red-700">Pure-Play CRM Solutions</h3>
+              <div class="space-y-3 text-sm">
+                <div class="border-l-4 border-red-400 pl-3">
+                  <strong>Pipedrive:</strong> Strong pipeline simplicity but limited ERP integration and M&amp;A specificity
+                </div>
+                <div class="border-l-4 border-red-400 pl-3">
+                  <strong>Affinity:</strong> Relationship intelligence leader but proprietary, premium pricing ($2,000+/user/year)
+                </div>
+                <div class="border-l-4 border-red-400 pl-3">
+                  <strong>4Degrees:</strong> M&amp;A-focused but SaaS-only, interface learning curve, support concerns
+                </div>
+              </div>
+              <div class="text-xs text-red-600 mt-3">Key Limitation: No ERP functionality, forcing system fragmentation</div>
+            </div>
+
+            <div class="bg-yellow-50 p-6 rounded-lg border border-yellow-200">
+              <h3 class="font-display text-lg font-semibold mb-4 text-yellow-700">Pure-Play ERP Solutions</h3>
+              <div class="space-y-3 text-sm">
+                <div class="border-l-4 border-yellow-400 pl-3">
+                  <strong>ERPNext:</strong> Strong open-source ERP but generic CRM module, limited M&amp;A workflow support
+                </div>
+                <div class="border-l-4 border-yellow-400 pl-3">
+                  <strong>Odoo:</strong> Comprehensive modularity but M&amp;A requires custom development, enterprise pricing complexity
+                </div>
+              </div>
+              <div class="text-xs text-yellow-600 mt-3">Key Limitation: 3-9 month implementation timelines for customization</div>
+            </div>
+
+            <div class="bg-blue-50 p-6 rounded-lg border border-blue-200">
+              <h3 class="font-display text-lg font-semibold mb-4 text-blue-700">M&amp;A-Specific SaaS Platforms</h3>
+              <div class="space-y-3 text-sm">
+                <div class="border-l-4 border-blue-400 pl-3">
+                  <strong>Dialllog:</strong> Purpose-built M&amp;A CRM (50+ firms) but no ERP, proprietary lock-in
+                </div>
+                <div class="border-l-4 border-blue-400 pl-3">
+                  <strong>DealCloud:</strong> Enterprise-focused but over-engineered for small-mid firms, high cost
+                </div>
+                <div class="border-l-4 border-blue-400 pl-3">
+                  <strong>Datasite/Midaxo:</strong> Transaction execution tools, not firm management platforms
+                </div>
+              </div>
+              <div class="text-xs text-blue-600 mt-3">Key Limitation: Point solutions requiring integration with broader systems</div>
+            </div>
+          </div>
+
+          <div class="bg-gray-50 p-8 rounded-lg mb-8">
+            <h3 class="font-display text-xl font-semibold mb-6">Competitive Positioning Matrix</h3>
+            <div class="overflow-x-auto">
+              <table class="w-full bg-white rounded-lg shadow-sm">
+                <thead class="bg-slate text-white">
+                  <tr>
+                    <th class="px-4 py-3 text-left">Platform</th>
+                    <th class="px-4 py-3 text-left">CRM Strength</th>
+                    <th class="px-4 py-3 text-left">ERP Strength</th>
+                    <th class="px-4 py-3 text-left">M&amp;A-Specific</th>
+                    <th class="px-4 py-3 text-left">Multi-Currency</th>
+                    <th class="px-4 py-3 text-left">Multi-Language</th>
+                    <th class="px-4 py-3 text-left">License</th>
+                    <th class="px-4 py-3 text-left">Price Range</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-200 text-sm">
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Dialllog</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3 text-yellow-600">Basic</td>
+                    <td class="px-4 py-3 text-yellow-600">Limited</td>
+                    <td class="px-4 py-3">Proprietary</td>
+                    <td class="px-4 py-3">Undisclosed</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-4 py-3 font-medium">4Degrees</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-yellow-600">Basic</td>
+                    <td class="px-4 py-3 text-yellow-600">Limited</td>
+                    <td class="px-4 py-3">Proprietary</td>
+                    <td class="px-4 py-3">~$250/user/month</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">Affinity</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-yellow-600">Moderate</td>
+                    <td class="px-4 py-3 text-yellow-600">Basic</td>
+                    <td class="px-4 py-3 text-yellow-600">Limited</td>
+                    <td class="px-4 py-3">Proprietary</td>
+                    <td class="px-4 py-3">$2,000+/user/year</td>
+                  </tr>
+                  <tr class="bg-gray-50">
+                    <td class="px-4 py-3 font-medium">Odoo</td>
+                    <td class="px-4 py-3 text-yellow-600">Moderate</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">Requires custom</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3">LGPL/Enterprise</td>
+                    <td class="px-4 py-3">€14.80-29.90/user/month + implementation</td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 font-medium">ERPNext</td>
+                    <td class="px-4 py-3 text-yellow-600">Basic</td>
+                    <td class="px-4 py-3 text-blue-600">Strong</td>
+                    <td class="px-4 py-3 text-red-600">None</td>
+                    <td class="px-4 py-3 text-blue-600">Good</td>
+                    <td class="px-4 py-3 text-green-600">Excellent</td>
+                    <td class="px-4 py-3">GPL/AGPL</td>
+                    <td class="px-4 py-3">$5-50/user/month + self-hosting</td>
+                  </tr>
+                  <tr class="bg-green-50 border-2 border-green-200">
+                    <td class="px-4 py-3 font-bold">Ideal Platform</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 text-green-600 font-bold">Excellent</td>
+                    <td class="px-4 py-3 font-bold">LGPL/AGPL</td>
+                    <td class="px-4 py-3 font-bold text-green-600">$50-400/user/month</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Implementation -->
+      <section id="implementation" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Implementation Roadmap &amp; Success Metrics</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-xl font-semibold mb-4">Phased Deployment Approach</h3>
+              <div class="space-y-4">
+                <div class="border-l-4 border-sage pl-4">
+                  <h4 class="font-semibold text-sm mb-1">Phase 1: Core CRM &amp; Contact Management (Weeks 1-4)</h4>
+                  <p class="text-xs text-gray-600 mb-2">Data migration, email integration, basic activity logging</p>
+                  <div class="text-xs text-gray-500">Success: Complete contact migration, daily active users</div>
+                </div>
+                <div class="border-l-4 border-slate pl-4">
+                  <h4 class="font-semibold text-sm mb-1">Phase 2: Deal Pipeline &amp; Document Management (Weeks 5-8)</h4>
+                  <p class="text-xs text-gray-600 mb-2">Pipeline configuration, template library, team collaboration</p>
+                  <div class="text-xs text-gray-500">Success: Active pipeline management, document version control</div>
+                </div>
+                <div class="border-l-4 border-charcoal pl-4">
+                  <h4 class="font-semibold text-sm mb-1">Phase 3: Financial Management &amp; ERP Integration (Weeks 9-16)</h4>
+                  <p class="text-xs text-gray-600 mb-2">Multi-currency setup, revenue recognition, banking integration</p>
+                  <div class="text-xs text-gray-500">Success: Financial transaction recording, profitability accuracy</div>
+                </div>
+                <div class="border-l-4 border-sage pl-4">
+                  <h4 class="font-semibold text-sm mb-1">Phase 4: Advanced Analytics &amp; Custom Workflows (Ongoing)</h4>
+                  <p class="text-xs text-gray-600 mb-2">Dashboard customization, predictive models, integration expansion</p>
+                  <div class="text-xs text-gray-500">Success: User adoption, workflow optimization</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h3 class="font-display text-xl font-semibold mb-4">Key Performance Indicators</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-chart-line text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">User Adoption</h4>
+                    <p class="text-xs text-gray-600">Daily active users, feature utilization rates, workflow completion</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-tachometer-alt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Operational Efficiency</h4>
+                    <p class="text-xs text-gray-600">Time-to-close reduction, administrative hours per deal decrease</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-dollar-sign text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Financial Impact</h4>
+                    <p class="text-xs text-gray-600">Revenue per professional, profit margins by practice area improvement</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-smile text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Client Satisfaction</h4>
+                    <p class="text-xs text-gray-600">Net Promoter Score, repeat engagement rates, referral quality</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-lg shadow-sm mb-8">
+            <h3 class="font-display text-xl font-semibold mb-6">Financial Management Implementation Timeline</h3>
+            <div class="space-y-4">
+              <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 text-sm font-bold">1</div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Chart of Accounts Design (Week 1-2)</h4>
+                  <p class="text-sm text-gray-600">Multi-entity structure, dimension definition, historical data mapping</p>
+                </div>
+                <div class="text-sm text-gray-500">Success: Approved structure, migration validation</div>
+              </div>
+              <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 text-sm font-bold">2</div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Multi-Currency Configuration (Week 3)</h4>
+                  <p class="text-sm text-gray-600">Currency activation, rate source configuration, historical rate loading</p>
+                </div>
+                <div class="text-sm text-gray-500">Success: Accurate conversion for sample transactions</div>
+              </div>
+              <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 text-sm font-bold">3</div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">Revenue Recognition Setup (Week 4-5)</h4>
+                  <p class="text-sm text-gray-600">Retainer, milestone, and success fee rule configuration</p>
+                </div>
+                <div class="text-sm text-gray-500">Success: Parallel run matching existing recognition within 1%</div>
+              </div>
+              <div class="flex items-center p-4 bg-blue-50 rounded-lg">
+                <div class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center mr-4 text-sm font-bold">4</div>
+                <div class="flex-1">
+                  <h4 class="font-semibold">System Integration (Week 6-8)</h4>
+                  <p class="text-sm text-gray-600">API configuration, data mapping, initial load, reconciliation</p>
+                </div>
+                <div class="text-sm text-gray-500">Success: 99.5% automated reconciliation rate</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Future Evolution -->
+      <section id="future-evolution" class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 class="font-display text-3xl font-bold text-slate mb-8">Future Evolution &amp; Innovation Trajectory</h2>
+
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-display text-xl font-semibold mb-4">Artificial Intelligence &amp; Automation</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-robot text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Predictive Deal Scoring</h4>
+                    <p class="text-xs text-gray-600">Machine learning models for outcome forecasting and resource optimization based on historical patterns</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-file-alt text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Automated Document Generation</h4>
+                    <p class="text-xs text-gray-600">Large language models for draft document creation with legal review workflows</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-search text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Natural Language Querying</h4>
+                    <p class="text-xs text-gray-600">Conversational interfaces for knowledge base information retrieval</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-tasks text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Intelligent Task Prioritization</h4>
+                    <p class="text-xs text-gray-600">AI-assisted work planning based on urgency, importance, and capacity</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-gray-50 p-6 rounded-lg">
+              <h3 class="font-display text-xl font-semibold mb-4">Ecosystem Expansion</h3>
+              <div class="space-y-4">
+                <div class="flex items-start">
+                  <i class="fas fa-chart-bar text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Embedded Market Intelligence</h4>
+                    <p class="text-xs text-gray-600">Integrated comparable transaction data and real-time market feeds</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-university text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Capital Markets Integration</h4>
+                    <p class="text-xs text-gray-600">Direct connectivity with financing sources and lender relationship management</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-leaf text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">ESG &amp; Sustainability Tracking</h4>
+                    <p class="text-xs text-gray-600">Environmental, social, and governance metrics for modern M&amp;A requirements</p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <i class="fas fa-globe-americas text-sage mr-3 mt-1"></i>
+                  <div>
+                    <h4 class="font-semibold text-sm">Global Expansion</h4>
+                    <p class="text-xs text-gray-600">Enhanced international capabilities with regional compliance modules</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-gradient-to-r from-sage to-slate text-white p-8 rounded-lg">
+            <div class="text-center">
+              <h3 class="font-display text-2xl font-bold mb-4">Strategic Vision: The Unified Future of M&amp;A Advisory</h3>
+              <p class="mb-6 opacity-90">
+                The perfect CRM+ERP platform represents more than technology—it&#39;s the foundation for transforming how M&amp;A advisory firms operate, compete, and deliver value in an increasingly complex global marketplace.
+              </p>
+              <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                <div>
+                  <div class="text-3xl font-bold mb-2">2025</div>
+                  <div class="text-sm opacity-90">Core Platform Launch</div>
+                </div>
+                <div>
+                  <div class="text-3xl font-bold mb-2">2026</div>
+                  <div class="text-sm opacity-90">AI-Powered Features</div>
+                </div>
+                <div>
+                  <div class="text-3xl font-bold mb-2">2027+</div>
+                  <div class="text-sm opacity-90">Ecosystem Maturity</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-charcoal text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="text-center">
+            <h3 class="font-display text-2xl font-bold mb-4">The Perfect CRM+ERP for M&amp;A Advisory Firms</h3>
+            <p class="mb-6 opacity-90">Unifying relationship intelligence with financial operations for the next generation of M&amp;A excellence</p>
+            <div class="flex justify-center space-x-6 text-sm">
+              <span class="flex items-center"><i class="fas fa-users mr-2"></i>1-100 Employees</span>
+              <span class="flex items-center"><i class="fas fa-globe mr-2"></i>Multi-Currency</span>
+              <span class="flex items-center"><i class="fas fa-language mr-2"></i>Multi-Language</span>
+              <span class="flex items-center"><i class="fas fa-code-branch mr-2"></i>Open Source</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </main>
+
+    <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Close TOC on mobile after clicking a link
+                if (window.innerWidth < 1024) {
+                    document.getElementById('toc-nav').classList.add('-translate-x-full');
+                }
+            }
+        });
+    });
+
+    // Toggle TOC visibility on mobile
+    document.getElementById('toc-toggle').addEventListener('click', function() {
+        document.getElementById('toc-nav').classList.toggle('-translate-x-full');
+    });
+
+    // Highlight active section in TOC
+    const observerOptions = {
+        rootMargin: '-20% 0px -70% 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            const id = entry.target.getAttribute('id');
+            const tocLink = document.querySelector(`a[href="#${id}"]`);
+            if (tocLink) {
+                if (entry.isIntersecting) {
+                    // Remove active class from all links
+                    document.querySelectorAll('#toc-nav a').forEach(link => {
+                        link.classList.remove('bg-sage', 'text-white');
+                        link.classList.add('hover:bg-sage/10');
+                    });
+                    // Add active class to current link
+                    tocLink.classList.add('bg-sage', 'text-white');
+                    tocLink.classList.remove('hover:bg-sage/10');
+                }
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section[id]').forEach(section => {
+        observer.observe(section);
+    });
+</script>
+  
+
+</body></html>
