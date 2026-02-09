@@ -33,7 +33,7 @@ M&A Advisory ERP est une version dérivée d'ERPNext spécialement conçue pour 
 ### 🎨 White Label
 - Personnalisation complète de la marque
 - Logo et couleurs personnalisés
-- Interface sans référence à Frappe/ERPNext
+- Interface sans référence
 - Configuration par domaine
 
 ### 🌐 Architecture Headless
