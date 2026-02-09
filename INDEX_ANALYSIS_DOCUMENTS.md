@@ -1,8 +1,8 @@
 # 📑 MASTER INDEX - Audit Complet Codebase
 
 **Créé**: 9 février 2026  
-**Nombre de documents**: 5 documents complets  
-**Couverture totale**: 95 pages d'analyse  
+**Nombre de documents**: 6 documents complets  
+**Couverture totale**: 105 pages d'analyse  
 **Statut**: ✅ Prêt pour utilisation immédiate
 
 ---
@@ -25,7 +25,8 @@
 
 ### Si vous avez **1-2 heures**:
 👉 **[FEATURE_MATRIX_COMPARISON.md](FEATURE_MATRIX_COMPARISON.md)** (20 pages) +  
-👉 **[IMPLEMENTATION_ROADMAP_2026.md](IMPLEMENTATION_ROADMAP_2026.md)** (15 pages)
+👉 **[IMPLEMENTATION_ROADMAP_2026.md](IMPLEMENTATION_ROADMAP_2026.md)** (15 pages) +  
+👉 **[STANDALONE_ERP_CMS_STRATEGY.md](STANDALONE_ERP_CMS_STRATEGY.md)** (8 pages)
 - Matrice features complète (Standalone vs ERPNext vs Strapi)
 - Plans d'implémentation détaillés
 - Roadmaps de développement
@@ -199,6 +200,22 @@ SECTION 5: Success Metrics
 
 ---
 
+### 6. STANDALONE_ERP_CMS_STRATEGY.md
+```
+📊 Type: Phased product strategy for ERP+CMS
+⏱️ Lecture: 30-45 minutes
+👥 Audience: Product, engineering, architecture
+📌 Contenu clé:
+   • Phases 0-7 delivery plan (platform, ERP, CMS, white-label)
+   • Best-in-class adaptations from ERPNext, Strapi, Bench
+   • Exit criteria + quality gates per phase
+   • Timeline summary + next-step checklist
+
+🎯 UTILISATION: Long-term planning, phase sequencing, feature parity alignment
+```
+
+---
+
 ## 🎯 DECISION FLOWCHART
 
 ```
@@ -238,7 +255,8 @@ START
 | CODEBASE_CONFORMANCE_AUDIT | 18 | 8,000 | 25 | 9 |
 | FEATURE_MATRIX_COMPARISON | 20 | 9,000 | 45 | 9 |
 | IMPLEMENTATION_ROADMAP_2026 | 15 | 6,500 | 15 | 8 |
-| **TOTAL** | **64** | **28,200** | **105** | **48** |
+| STANDALONE_ERP_CMS_STRATEGY | 8 | 2,400 | 2 | 9 |
+| **TOTAL** | **72** | **30,600** | **107** | **57** |
 
 📈 **Couverture**: Complète du CRM jusqu'à stratégie ERP long-terme
 
