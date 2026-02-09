@@ -4,6 +4,19 @@ from typing import Optional
 from pydantic import BaseModel, EmailStr
 
 
+class TenantCreate(BaseModel):
+    name: str
+    slug: str
+
+
+class TenantOut(TenantCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
 class CompanyCreate(BaseModel):
     name: str
     company_type: Optional[str] = None

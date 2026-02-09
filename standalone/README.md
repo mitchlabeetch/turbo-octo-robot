@@ -69,6 +69,11 @@ docker compose up --build
 - `POST /auth/register` - Register new user (admin-gated)
 - `POST /auth/token` - Login with credentials
 
+### Tenant Provisioning
+- `POST /tenants` - Create tenant (admin)
+- `GET /tenants` - List tenants (admin)
+- `GET /tenants/{tenant_id}` - Retrieve tenant (admin)
+
 ### Data Room Features (NDA, Watermarks, Access Logs)
 - `POST /shares/documents/{id}` - Create share with NDA/view-only/password options
 - `GET /shares/{token}` - Get share info (status, NDA requirements, expiration)
