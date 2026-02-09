@@ -1,0 +1,109 @@
+/* M&A Advisory ERP - Custom Styles for French UI and White Label */
+
+/* French typography and layout adjustments */
+:root {
+    --ma-primary-color: #3498db;
+    --ma-secondary-color: #2ecc71;
+    --ma-accent-color: #e74c3c;
+    --ma-text-color: #2c3e50;
+    --ma-background: #ecf0f1;
+}
+
+/* Override Frappe default colors with white label support */
+.navbar-brand {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Custom branding area */
+.brand-logo {
+    max-height: 40px;
+    width: auto;
+}
+
+/* Deal pipeline visualization */
+.deal-stage-card {
+    border-left: 4px solid var(--ma-primary-color);
+    padding: 15px;
+    margin-bottom: 10px;
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.deal-value {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: var(--ma-accent-color);
+}
+
+/* Valuation dashboard styling */
+.valuation-metric {
+    text-align: center;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.valuation-metric h3 {
+    color: var(--ma-primary-color);
+    margin-bottom: 10px;
+}
+
+.valuation-metric .value {
+    font-size: 2em;
+    font-weight: bold;
+    color: var(--ma-text-color);
+}
+
+/* Due diligence checklist */
+.dd-category {
+    margin-bottom: 20px;
+}
+
+.dd-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.dd-item.completed {
+    background-color: #d4edda;
+}
+
+.dd-item.pending {
+    background-color: #fff3cd;
+}
+
+/* French locale date formatting */
+.date-display {
+    font-variant-numeric: lining-nums;
+}
+
+/* Hide Frappe branding when white label enabled */
+.hide-branding .frappe-brand,
+.hide-branding .powered-by {
+    display: none !important;
+}
+
+/* Responsive design for mobile M&A dashboards */
+@media (max-width: 768px) {
+    .valuation-metric {
+        margin: 5px 0;
+    }
+    
+    .deal-stage-card {
+        font-size: 0.9em;
+    }
+}
+
+/* Custom login page styling */
+.login-container {
+    background-size: cover;
+    background-position: center;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}

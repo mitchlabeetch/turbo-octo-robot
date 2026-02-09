@@ -1,0 +1,131 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "branding_section",
+  "app_name",
+  "app_logo_url",
+  "favicon_url",
+  "column_break_5",
+  "brand_color",
+  "login_background_url",
+  "hide_frappe_branding",
+  "section_break_9",
+  "default_country",
+  "default_currency",
+  "default_language",
+  "section_break_13",
+  "custom_css",
+  "custom_js"
+ ],
+ "fields": [
+  {
+   "fieldname": "branding_section",
+   "fieldtype": "Section Break",
+   "label": "Configuration de la Marque"
+  },
+  {
+   "fieldname": "app_name",
+   "fieldtype": "Data",
+   "label": "Nom de l'Application",
+   "description": "Nom personnalisé de l'application"
+  },
+  {
+   "fieldname": "app_logo_url",
+   "fieldtype": "Attach Image",
+   "label": "Logo de l'Application"
+  },
+  {
+   "fieldname": "favicon_url",
+   "fieldtype": "Attach Image",
+   "label": "Favicon"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "brand_color",
+   "fieldtype": "Color",
+   "label": "Couleur de la Marque"
+  },
+  {
+   "fieldname": "login_background_url",
+   "fieldtype": "Attach Image",
+   "label": "Image de Fond de Connexion"
+  },
+  {
+   "fieldname": "hide_frappe_branding",
+   "fieldtype": "Check",
+   "label": "Masquer la Marque Frappe",
+   "default": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Paramètres par Défaut"
+  },
+  {
+   "fieldname": "default_country",
+   "fieldtype": "Link",
+   "label": "Pays par Défaut",
+   "options": "Country",
+   "default": "France"
+  },
+  {
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Devise par Défaut",
+   "options": "Currency",
+   "default": "EUR"
+  },
+  {
+   "fieldname": "default_language",
+   "fieldtype": "Select",
+   "label": "Langue par Défaut",
+   "options": "fr\nen",
+   "default": "fr"
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "Personnalisation Avancée"
+  },
+  {
+   "fieldname": "custom_css",
+   "fieldtype": "Code",
+   "label": "CSS Personnalisé",
+   "options": "CSS"
+  },
+  {
+   "fieldname": "custom_js",
+   "fieldtype": "Code",
+   "label": "JavaScript Personnalisé",
+   "options": "JS"
+  }
+ ],
+ "issingle": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "M&A Advisory",
+ "name": "White Label Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

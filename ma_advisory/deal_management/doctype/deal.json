@@ -1,0 +1,185 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deal_name",
+  "deal_type",
+  "stage",
+  "status",
+  "column_break_5",
+  "client",
+  "target_company",
+  "industry",
+  "section_break_9",
+  "value",
+  "currency",
+  "probability",
+  "expected_close_date",
+  "section_break_14",
+  "description",
+  "section_break_16",
+  "advisor_team",
+  "lead_advisor",
+  "section_break_19",
+  "created_date",
+  "closing_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "deal_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom de la Transaction",
+   "reqd": 1
+  },
+  {
+   "fieldname": "deal_type",
+   "fieldtype": "Select",
+   "label": "Type de Transaction",
+   "options": "Acquisition\nFusion\nCession\nLevée de Fonds\nMBO/MBI\nRecapitalisation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Étape",
+   "options": "Origination\nMandat Signé\nTeaser Envoyé\nNDA Signés\nCIM Distribué\nOffres Indicatives\nDue Diligence\nOffres Finales\nNégociation\nSigning\nClosing",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Statut",
+   "options": "Actif\nEn Attente\nTerminé\nAnnulé",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "client",
+   "fieldtype": "Link",
+   "label": "Client",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "target_company",
+   "fieldtype": "Data",
+   "label": "Société Cible"
+  },
+  {
+   "fieldname": "industry",
+   "fieldtype": "Link",
+   "label": "Secteur",
+   "options": "Industry Type"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Valorisation"
+  },
+  {
+   "fieldname": "value",
+   "fieldtype": "Currency",
+   "label": "Valeur de la Transaction"
+  },
+  {
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Devise",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "probability",
+   "fieldtype": "Percent",
+   "label": "Probabilité de Succès"
+  },
+  {
+   "fieldname": "expected_close_date",
+   "fieldtype": "Date",
+   "label": "Date de Clôture Prévue"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Description"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text Editor",
+   "label": "Description"
+  },
+  {
+   "fieldname": "section_break_16",
+   "fieldtype": "Section Break",
+   "label": "Équipe Conseil"
+  },
+  {
+   "fieldname": "advisor_team",
+   "fieldtype": "Table",
+   "label": "Équipe",
+   "options": "Deal Team Member"
+  },
+  {
+   "fieldname": "lead_advisor",
+   "fieldtype": "Link",
+   "label": "Conseiller Principal",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "created_date",
+   "fieldtype": "Date",
+   "label": "Date de Création"
+  },
+  {
+   "fieldname": "closing_date",
+   "fieldtype": "Date",
+   "label": "Date de Clôture"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "M&A Advisory",
+ "name": "Deal",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "M&A Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "M&A Analyst",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "deal_name",
+ "track_changes": 1
+}

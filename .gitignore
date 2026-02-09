@@ -1,0 +1,51 @@
+# node_modules
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Frappe specific
+sites/*/private/*
+sites/*/logs/*
+sites/*/locks/*
+*.lock
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Environment
+.env
+.env.local
+
+# Compiled assets
+ma_advisory/public/js/*.min.js
+ma_advisory/public/css/*.min.css
+
+# Temporary files
+*.tmp
+*.bak
+*.log
+
+# Database
+*.db
+*.sqlite

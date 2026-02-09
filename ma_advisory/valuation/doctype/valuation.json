@@ -1,0 +1,182 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deal",
+  "company_name",
+  "valuation_date",
+  "column_break_4",
+  "valuation_method",
+  "status",
+  "section_break_7",
+  "revenue",
+  "ebitda",
+  "ebit",
+  "column_break_11",
+  "ebitda_multiple",
+  "revenue_multiple",
+  "section_break_14",
+  "enterprise_value",
+  "equity_value",
+  "column_break_17",
+  "debt",
+  "cash",
+  "section_break_20",
+  "notes",
+  "attachments"
+ ],
+ "fields": [
+  {
+   "fieldname": "deal",
+   "fieldtype": "Link",
+   "label": "Transaction",
+   "options": "Deal"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Nom de l'Entreprise",
+   "reqd": 1
+  },
+  {
+   "fieldname": "valuation_date",
+   "fieldtype": "Date",
+   "label": "Date de Valorisation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "valuation_method",
+   "fieldtype": "Select",
+   "label": "Méthode de Valorisation",
+   "options": "Multiples de Transaction\nMultiples de Marché\nDCF\nActif Net Réévalué\nMixte",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Statut",
+   "options": "Brouillon\nEn Cours\nValidé\nArchivé"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break",
+   "label": "Données Financières"
+  },
+  {
+   "fieldname": "revenue",
+   "fieldtype": "Currency",
+   "label": "Chiffre d'Affaires"
+  },
+  {
+   "fieldname": "ebitda",
+   "fieldtype": "Currency",
+   "label": "EBITDA"
+  },
+  {
+   "fieldname": "ebit",
+   "fieldtype": "Currency",
+   "label": "EBIT"
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ebitda_multiple",
+   "fieldtype": "Float",
+   "label": "Multiple d'EBITDA"
+  },
+  {
+   "fieldname": "revenue_multiple",
+   "fieldtype": "Float",
+   "label": "Multiple de CA"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "label": "Résultats de Valorisation"
+  },
+  {
+   "fieldname": "enterprise_value",
+   "fieldtype": "Currency",
+   "label": "Valeur d'Entreprise"
+  },
+  {
+   "fieldname": "equity_value",
+   "fieldtype": "Currency",
+   "label": "Valeur des Capitaux Propres"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "debt",
+   "fieldtype": "Currency",
+   "label": "Dette Nette"
+  },
+  {
+   "fieldname": "cash",
+   "fieldtype": "Currency",
+   "label": "Trésorerie"
+  },
+  {
+   "fieldname": "section_break_20",
+   "fieldtype": "Section Break",
+   "label": "Notes et Documents"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  },
+  {
+   "fieldname": "attachments",
+   "fieldtype": "Table",
+   "label": "Pièces Jointes",
+   "options": "File Attachment"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "M&A Advisory",
+ "name": "Valuation",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "M&A Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "M&A Analyst",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "company_name",
+ "track_changes": 1
+}
