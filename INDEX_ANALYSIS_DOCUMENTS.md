@@ -2,7 +2,7 @@
 
 **Créé**: 9 février 2026  
 **Nombre de documents**: 7 documents complets  
-**Couverture totale**: 75 pages d'analyse  
+**Couverture totale (estimation)**: 75 pages d'analyse  
 **Statut**: ✅ Prêt pour utilisation immédiate
 
 ---
