@@ -20,7 +20,7 @@ def create_account(
 ):
     existing = db.query(Account).filter(
         or_(Account.name == payload.name, Account.code == payload.code)
-    ).all()
+    ).limit(2).all()
     if existing:
         has_name = any(account.name == payload.name for account in existing)
         has_code = any(account.code == payload.code for account in existing)
@@ -33,6 +33,7 @@ def create_account(
         raise HTTPException(status_code=409, detail=detail)
     account = Account(**payload.model_dump())
     db.add(account)
+    # IntegrityError still protects against race conditions on unique constraints.
     try:
         db.commit()
     except IntegrityError:
