@@ -5,6 +5,8 @@
 **Couverture totale (estimation)**: 75 pages d'analyse  
 **Statut**: ✅ Prêt pour utilisation immédiate
 
+_Note: Les totaux sont recalculés à partir du tableau de statistiques ci-dessous._
+
 ---
 
 ## 🎯 Où Commencer?
