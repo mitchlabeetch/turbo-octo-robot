@@ -1,4 +1,4 @@
-from sqlalchemy import Boolean, Column, Date, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy import Boolean, CheckConstraint, Column, Date, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
@@ -130,6 +130,12 @@ class Tenant(Base):
 
 class Account(Base):
     __tablename__ = "accounts"
+    __table_args__ = (
+        CheckConstraint(
+            "account_type IN ('Asset', 'Liability', 'Equity', 'Revenue', 'Expense')",
+            name="ck_account_type",
+        ),
+    )
 
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String(255), unique=True, nullable=False)
@@ -141,6 +147,12 @@ class Account(Base):
 
 class Invoice(Base):
     __tablename__ = "invoices"
+    __table_args__ = (
+        CheckConstraint(
+            "status IN ('Draft', 'Sent', 'Paid', 'Overdue', 'Cancelled')",
+            name="ck_invoice_status",
+        ),
+    )
 
     id = Column(Integer, primary_key=True, index=True)
     invoice_number = Column(String(50), unique=True, nullable=False)

@@ -1,6 +1,6 @@
 from datetime import date
 from datetime import datetime
-from typing import Optional
+from typing import Literal, Optional
 
 from pydantic import BaseModel, EmailStr
 
@@ -21,7 +21,7 @@ class TenantOut(TenantCreate):
 class AccountCreate(BaseModel):
     name: str
     code: str
-    account_type: str
+    account_type: Literal["Asset", "Liability", "Equity", "Revenue", "Expense"]
     description: Optional[str] = None
 
 
@@ -38,7 +38,7 @@ class InvoiceCreate(BaseModel):
     customer_name: str
     currency: str
     total_amount_cents: int
-    status: str = "Draft"
+    status: Literal["Draft", "Sent", "Paid", "Overdue", "Cancelled"] = "Draft"
     issued_date: Optional[date] = None
     due_date: Optional[date] = None
 

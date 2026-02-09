@@ -23,7 +23,9 @@ def create_invoice(
         db.commit()
     except IntegrityError:
         db.rollback()
-        raise HTTPException(status_code=409, detail="Invoice already exists")
+        raise HTTPException(
+            status_code=409, detail="Invoice with this invoice_number already exists"
+        )
     db.refresh(invoice)
     return invoice
 
@@ -31,9 +33,11 @@ def create_invoice(
 @router.get("", response_model=list[InvoiceOut])
 def list_invoices(
     db: Session = Depends(get_db),
-    _admin: User = Depends(require_role("admin"))
+    _admin: User = Depends(require_role("admin")),
+    limit: int = 100,
+    offset: int = 0
 ):
-    return db.query(Invoice).order_by(Invoice.id).all()
+    return db.query(Invoice).order_by(Invoice.id).offset(offset).limit(limit).all()
 
 
 @router.get("/{invoice_id}", response_model=InvoiceOut)

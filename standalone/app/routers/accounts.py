@@ -23,7 +23,9 @@ def create_account(
         db.commit()
     except IntegrityError:
         db.rollback()
-        raise HTTPException(status_code=409, detail="Account already exists")
+        raise HTTPException(
+            status_code=409, detail="Account with this name or code already exists"
+        )
     db.refresh(account)
     return account
 
@@ -31,9 +33,11 @@ def create_account(
 @router.get("", response_model=list[AccountOut])
 def list_accounts(
     db: Session = Depends(get_db),
-    _admin: User = Depends(require_role("admin"))
+    _admin: User = Depends(require_role("admin")),
+    limit: int = 100,
+    offset: int = 0
 ):
-    return db.query(Account).order_by(Account.id).all()
+    return db.query(Account).order_by(Account.id).offset(offset).limit(limit).all()
 
 
 @router.get("/{account_id}", response_model=AccountOut)
