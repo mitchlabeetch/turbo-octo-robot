@@ -63,13 +63,16 @@ class DueDiligenceItem(Document):
         <p>Échéance: {self.due_date or 'Non définie'}</p>
         """
         
-        frappe.sendmail(
-            recipients=[self.assigned_to],
-            subject=f"Assignation DD: {self.item_name}",
-            message=message,
-            reference_doctype=self.doctype,
-            reference_name=self.name
-        )
+        try:
+            frappe.sendmail(
+                recipients=[self.assigned_to],
+                subject=f"Assignation DD: {self.item_name}",
+                message=message,
+                reference_doctype=self.doctype,
+                reference_name=self.name
+            )
+        except Exception as e:
+            frappe.log_error(f"Failed to send DD assignment notification: {str(e)}", "Email Notification Error")
     
     def update_deal_dashboard(self):
         """Update the deal's DD progress"""

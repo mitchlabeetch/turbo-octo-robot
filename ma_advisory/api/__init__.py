@@ -2,7 +2,7 @@
 
 import frappe
 from frappe import _
-from frappe.utils import flt, getdate, nowdate, add_days
+from frappe.utils import flt, getdate, nowdate
 
 def on_update(doc, method):
     """Hook called on document update"""
@@ -204,6 +204,11 @@ def get_deal_analytics(deal_name=None):
 @frappe.whitelist()
 def create_dd_checklist_from_template(deal_name, template_name="Standard"):
     """Create DD checklist from template"""
+    # Check if deal exists
+    if not frappe.db.exists("Deal", deal_name):
+        frappe.throw(_("Transaction non trouvée: {0}").format(deal_name))
+    
+    # Check if DD items already exist
     if frappe.db.exists("Due Diligence Item", {"deal": deal_name}):
         frappe.throw(_("Des éléments de due diligence existent déjà pour cette transaction"))
     
@@ -214,19 +219,20 @@ def create_dd_checklist_from_template(deal_name, template_name="Standard"):
     created_items = []
     for category, items in template.items():
         for item_data in items:
-            dd_item = frappe.get_doc({
-                "doctype": "Due Diligence Item",
-                "deal": deal_name,
-                "category": category,
-                "item_name": item_data["name"],
-                "priority": item_data.get("priority", "Moyenne"),
-                "documents_required": item_data.get("documents", 0),
-                "status": "À Faire"
-            })
-            dd_item.insert(ignore_permissions=True)
-            created_items.append(dd_item.name)
-    
-    frappe.db.commit()
+            try:
+                dd_item = frappe.get_doc({
+                    "doctype": "Due Diligence Item",
+                    "deal": deal_name,
+                    "category": category,
+                    "item_name": item_data["name"],
+                    "priority": item_data.get("priority", "Moyenne"),
+                    "documents_required": item_data.get("documents", 0),
+                    "status": "À Faire"
+                })
+                dd_item.insert(ignore_permissions=True)
+                created_items.append(dd_item.name)
+            except Exception as e:
+                frappe.log_error(f"Failed to create DD item from template: {str(e)}", "DD Template Creation Error")
     
     return {
         "success": True,

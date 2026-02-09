@@ -2,7 +2,7 @@
 
 import frappe
 from frappe.model.document import Document
-from frappe.utils import nowdate, getdate, flt, add_days, get_datetime
+from frappe.utils import nowdate, getdate, flt
 from frappe import _
 
 class Deal(Document):
@@ -44,7 +44,14 @@ class Deal(Document):
         
         # Set default currency if not set
         if not self.currency:
-            self.currency = frappe.db.get_value("Company", frappe.defaults.get_user_default("Company"), "default_currency") or "EUR"
+            try:
+                default_company = frappe.defaults.get_user_default("Company")
+                if default_company:
+                    self.currency = frappe.db.get_value("Company", default_company, "default_currency")
+                if not self.currency:
+                    self.currency = "EUR"
+            except Exception:
+                self.currency = "EUR"
     
     def validate(self):
         """Validate deal before saving"""
@@ -157,9 +164,8 @@ class Deal(Document):
         
         try:
             project.insert(ignore_permissions=True)
-            frappe.db.commit()
         except Exception as e:
-            frappe.log_error(f"Failed to create project for deal {self.name}: {str(e)}")
+            frappe.log_error(f"Failed to create project for deal {self.name}: {str(e)}", "Deal Project Creation Error")
     
     def update_linked_project(self):
         """Update linked ERPNext Project"""
@@ -224,9 +230,7 @@ class Deal(Document):
                     })
                     dd_item.insert(ignore_permissions=True)
                 except Exception as e:
-                    frappe.log_error(f"Failed to create DD item {item_name}: {str(e)}")
-        
-        frappe.db.commit()
+                    frappe.log_error(f"Failed to create DD item {item_name}: {str(e)}", "DD Item Creation Error")
     
     def notify_stage_change(self):
         """Notify team when stage changes"""
@@ -238,9 +242,10 @@ class Deal(Document):
         if self.lead_advisor:
             team_emails.append(self.lead_advisor)
         
-        for member in self.advisor_team:
-            if member.email:
-                team_emails.append(member.email)
+        if self.advisor_team:
+            for member in self.advisor_team:
+                if member.email:
+                    team_emails.append(member.email)
         
         if not team_emails:
             return
@@ -253,13 +258,16 @@ class Deal(Document):
         <p><a href="/app/deal/{self.name}">Voir la transaction</a></p>
         """
         
-        frappe.sendmail(
-            recipients=list(set(team_emails)),
-            subject=f"Changement d'étape: {self.deal_name}",
-            message=message,
-            reference_doctype=self.doctype,
-            reference_name=self.name
-        )
+        try:
+            frappe.sendmail(
+                recipients=list(set(team_emails)),
+                subject=f"Changement d'étape: {self.deal_name}",
+                message=message,
+                reference_doctype=self.doctype,
+                reference_name=self.name
+            )
+        except Exception as e:
+            frappe.log_error(f"Failed to send stage change notification: {str(e)}", "Email Notification Error")
     
     def create_timeline_entry(self):
         """Create timeline entry for important changes"""
@@ -285,16 +293,19 @@ class Deal(Document):
     
     def send_notification(self):
         """Send notification when new deal is created"""
-        if self.lead_advisor:
-            message = f"""
-            <h3>Nouvelle transaction créée</h3>
-            <p>Une nouvelle transaction a été créée:</p>
-            <p><b>{self.deal_name}</b></p>
-            <p>Type: {self.deal_type}</p>
-            <p>Client: {self.client or 'N/A'}</p>
-            <p><a href="/app/deal/{self.name}">Voir la transaction</a></p>
-            """
+        if not self.lead_advisor:
+            return
             
+        message = f"""
+        <h3>Nouvelle transaction créée</h3>
+        <p>Une nouvelle transaction a été créée:</p>
+        <p><b>{self.deal_name}</b></p>
+        <p>Type: {self.deal_type}</p>
+        <p>Client: {self.client or 'N/A'}</p>
+        <p><a href="/app/deal/{self.name}">Voir la transaction</a></p>
+        """
+        
+        try:
             frappe.sendmail(
                 recipients=[self.lead_advisor],
                 subject=f"Nouvelle transaction: {self.deal_name}",
@@ -302,6 +313,8 @@ class Deal(Document):
                 reference_doctype=self.doctype,
                 reference_name=self.name
             )
+        except Exception as e:
+            frappe.log_error(f"Failed to send new deal notification: {str(e)}", "Email Notification Error")
     
     @frappe.whitelist()
     def get_dashboard_data(self):
