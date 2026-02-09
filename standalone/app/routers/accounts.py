@@ -20,10 +20,17 @@ def create_account(
 ):
     existing = db.query(Account).filter(
         or_(Account.name == payload.name, Account.code == payload.code)
-    ).limit(2).all()
-    if existing:
-        has_name = any(account.name == payload.name for account in existing)
-        has_code = any(account.code == payload.code for account in existing)
+    ).limit(2)
+    has_name = False
+    has_code = False
+    found = False
+    for account in existing:
+        found = True
+        if account.name == payload.name:
+            has_name = True
+        if account.code == payload.code:
+            has_code = True
+    if found:
         if has_name and has_code:
             detail = "Account name and code already exist"
         elif has_name:
