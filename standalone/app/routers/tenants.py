@@ -31,9 +31,11 @@ def create_tenant(
 @router.get("", response_model=list[TenantOut])
 def list_tenants(
     db: Session = Depends(get_db),
-    _admin: User = Depends(require_role("admin"))
+    _admin: User = Depends(require_role("admin")),
+    limit: int = Query(default=100, ge=1, le=1000),
+    offset: int = Query(default=0, ge=0)
 ):
-    return db.query(Tenant).order_by(Tenant.id).all()
+    return db.query(Tenant).order_by(Tenant.id).offset(offset).limit(limit).all()
 
 
 @router.get("/{tenant_id}", response_model=TenantOut)
