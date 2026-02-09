@@ -1,0 +1,118 @@
+name: Verify Dependency Cleanup
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - "pyproject.toml"
+      - "requirements.txt"
+      - "standalone/pyproject.toml"
+      - ".github/workflows/verify-dependencies.yml"
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  verify-cleanup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Check root pyproject.toml excludes Frappe
+        run: |
+          if grep -q "frappe\|erpnext" pyproject.toml; then
+            echo "❌ ERROR: Found frappe/erpnext in root pyproject.toml"
+            echo "These should only be in standalone/pyproject.toml or /ma_advisory/"
+            exit 1
+          else
+            echo "✅ Verified: No Frappe/ERPNext in root pyproject.toml"
+          fi
+
+      - name: Check root requirements.txt explains architecture
+        run: |
+          if grep -q "standalone" requirements.txt && grep -q "RECOMMENDED" requirements.txt; then
+            echo "✅ Verified: requirements.txt documents architecture rationale"
+          else
+            echo "⚠️ Warning: requirements.txt should document standalone recommendation"
+          fi
+
+      - name: Verify standalone is self-contained
+        run: |
+          cd standalone
+          pip install --quiet -e .
+          
+          # Test that imports work without root frappe
+          python -c "from app.main import app; print('✅ Standalone imports without root deps')"
+
+      - name: Check version is 2.0.0+
+        run: |
+          VERSION=$(grep "version" pyproject.toml | head -1 | grep -oE "[0-9]+\.[0-9]+\.[0-9]+" || echo "0.0.0")
+          MAJOR=$(echo $VERSION | cut -d. -f1)
+          
+          if [ "$MAJOR" -ge 2 ]; then
+            echo "✅ Verified: Version $VERSION >= 2.0.0 (breaking change marker)"
+          else
+            echo "⚠️ Warning: Version should be bumped to 2.0.0+ for breaking changes"
+          fi
+
+      - name: Scan for deprecated code references
+        run: |
+          FRAPPE_REFS=$(grep -r "frappe\|erpnext" --include="*.py" standalone/app/ 2>/dev/null | wc -l)
+          
+          if [ "$FRAPPE_REFS" -gt 0 ]; then
+            echo "❌ ERROR: Found $FRAPPE_REFS Frappe references in standalone"
+            grep -r "frappe\|erpnext" --include="*.py" standalone/app/
+            exit 1
+          else
+            echo "✅ Verified: No Frappe references in standalone/app"
+          fi
+
+      - name: Check documentation status
+        run: |
+          REQUIRED_DOCS=("MIGRATION_GUIDE.md" "CODEBASE_ANALYSIS.md" "ma_advisory/DEPRECATED.md")
+          MISSING=0
+          
+          for doc in "${REQUIRED_DOCS[@]}"; do
+            if [ -f "$doc" ]; then
+              echo "✅ Found $doc"
+            else
+              echo "⚠️ Missing $doc"
+              MISSING=$((MISSING+1))
+            fi
+          done
+          
+          if [ "$MISSING" -gt 0 ]; then
+            echo "⚠️ Warning: Missing $MISSING documentation files"
+          fi
+
+  dependency-audit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+
+      - name: Check for outdated dependencies
+        working-directory: ./standalone
+        run: |
+          pip install --quiet pip-audit
+          pip-audit --desc 2>/dev/null || echo "⚠️ Some vulnerabilities found (advisory)"
+
+      - name: Generate dependency report
+        working-directory: ./standalone
+        run: |
+          pip install --quiet -e .
+          pip list > /tmp/dependencies.txt
+          echo "📦 Installed packages:"
+          wc -l /tmp/dependencies.txt
+          echo ""
+          echo "Target: ~70 packages (includes dev dependencies)"
