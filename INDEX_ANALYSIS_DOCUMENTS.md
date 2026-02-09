@@ -1,8 +1,8 @@
 # 📑 MASTER INDEX - Audit Complet Codebase
 
 **Créé**: 9 février 2026  
-**Nombre de documents**: 6 documents complets  
-**Couverture totale**: 105 pages d'analyse  
+**Nombre de documents**: 7 documents complets  
+**Couverture totale**: 75 pages d'analyse  
 **Statut**: ✅ Prêt pour utilisation immédiate
 
 ---
@@ -26,7 +26,8 @@
 ### Si vous avez **1-2 heures**:
 👉 **[FEATURE_MATRIX_COMPARISON.md](FEATURE_MATRIX_COMPARISON.md)** (20 pages) +  
 👉 **[IMPLEMENTATION_ROADMAP_2026.md](IMPLEMENTATION_ROADMAP_2026.md)** (15 pages) +  
-👉 **[STANDALONE_ERP_CMS_STRATEGY.md](STANDALONE_ERP_CMS_STRATEGY.md)** (8 pages)
+👉 **[STANDALONE_ERP_CMS_STRATEGY.md](STANDALONE_ERP_CMS_STRATEGY.md)** (8 pages) +  
+👉 **[PHASE_0_EXECUTION.md](PHASE_0_EXECUTION.md)** (3 pages)
 - Matrice features complète (Standalone vs ERPNext vs Strapi)
 - Plans d'implémentation détaillés
 - Roadmaps de développement
@@ -216,6 +217,21 @@ SECTION 5: Success Metrics
 
 ---
 
+### 7. PHASE_0_EXECUTION.md
+```
+📊 Type: Phase 0 execution tracker
+⏱️ Lecture: 10-15 minutes
+👥 Audience: Product, engineering, architecture
+📌 Contenu clé:
+   • Phase 0 workstreams and outputs
+   • Execution checklist and immediate next actions
+   • Baseline artifacts and ownership slots
+
+🎯 UTILISATION: Kickoff Phase 0 delivery and assign workstreams
+```
+
+---
+
 ## 🎯 DECISION FLOWCHART
 
 ```
@@ -256,7 +272,8 @@ START
 | FEATURE_MATRIX_COMPARISON | 20 | 9,000 | 45 | 9 |
 | IMPLEMENTATION_ROADMAP_2026 | 15 | 6,500 | 15 | 8 |
 | STANDALONE_ERP_CMS_STRATEGY | 8 | 2,400 | 2 | 9 |
-| **TOTAL** | **72** | **30,600** | **107** | **57** |
+| PHASE_0_EXECUTION | 3 | 900 | 1 | 6 |
+| **TOTAL** | **75** | **31,500** | **108** | **63** |
 
 📈 **Couverture**: Complète du CRM jusqu'à stratégie ERP long-terme
 
