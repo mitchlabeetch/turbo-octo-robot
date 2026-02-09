@@ -1,0 +1,81 @@
+# French translations for M&A Advisory ERP
+# DocType,Label,French Translation
+
+# Deal Management Terms
+Deal,Deal,Transaction
+Deal Pipeline,Deal Pipeline,Pipeline de Transactions
+Deal Stage,Deal Stage,Étape de Transaction
+Deal Value,Deal Value,Valeur de Transaction
+Target Company,Target Company,Société Cible
+Buyer,Buyer,Acheteur
+Seller,Seller,Vendeur
+Acquisition,Acquisition,Acquisition
+Merger,Merger,Fusion
+Divestiture,Divestiture,Cession
+
+# Financial Terms
+Valuation,Valuation,Valorisation
+EBITDA,EBITDA,EBITDA
+Enterprise Value,Enterprise Value,Valeur d'Entreprise
+Equity Value,Equity Value,Valeur des Capitaux Propres
+Multiple,Multiple,Multiple
+DCF,DCF,DCF
+Discounted Cash Flow,Discounted Cash Flow,Flux de Trésorerie Actualisés
+
+# Due Diligence
+Due Diligence,Due Diligence,Due Diligence
+Financial DD,Financial DD,DD Financière
+Legal DD,Legal DD,DD Juridique
+Commercial DD,Commercial DD,DD Commerciale
+Tax DD,Tax DD,DD Fiscale
+HR DD,HR DD,DD RH
+IT DD,IT DD,DD IT
+
+# Client Management
+Client,Client,Client
+Prospect,Prospect,Prospect
+Mandate,Mandate,Mandat
+Retainer,Retainer,Honoraires Forfaitaires
+Success Fee,Success Fee,Honoraires de Succès
+Advisory Fee,Advisory Fee,Honoraires de Conseil
+
+# Document Types
+Teaser,Teaser,Teaser
+CIM,CIM,Mémo d'Information
+NDA,NDA,Accord de Confidentialité
+LOI,LOI,Lettre d'Intention
+SPA,SPA,Contrat de Cession
+Term Sheet,Term Sheet,Fiche de Termes
+
+# Status
+Active,Active,Actif
+Pending,Pending,En Attente
+Completed,Completed,Terminé
+Cancelled,Cancelled,Annulé
+On Hold,On Hold,En Pause
+
+# Actions
+Submit,Submit,Soumettre
+Save,Save,Enregistrer
+Cancel,Cancel,Annuler
+Update,Update,Mettre à jour
+Delete,Delete,Supprimer
+Export,Export,Exporter
+Import,Import,Importer
+
+# Navigation
+Dashboard,Dashboard,Tableau de Bord
+Reports,Reports,Rapports
+Settings,Settings,Paramètres
+Help,Help,Aide
+Logout,Logout,Déconnexion
+
+# Common Fields
+Name,Name,Nom
+Description,Description,Description
+Date,Date,Date
+Amount,Amount,Montant
+Status,Status,Statut
+Owner,Owner,Propriétaire
+Created,Created,Créé
+Modified,Modified,Modifié

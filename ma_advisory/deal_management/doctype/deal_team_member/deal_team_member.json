@@ -1,0 +1,71 @@
+{
+ "actions": [],
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "user",
+  "full_name",
+  "role",
+  "column_break_4",
+  "email",
+  "phone",
+  "involvement_level"
+ ],
+ "fields": [
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Utilisateur",
+   "options": "User"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Nom Complet",
+   "reqd": 1
+  },
+  {
+   "fieldname": "role",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Rôle",
+   "options": "Associé Principal\nAssocié\nDirecteur\nManager\nAnalyste Senior\nAnalyste\nAssistant",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email"
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Téléphone"
+  },
+  {
+   "fieldname": "involvement_level",
+   "fieldtype": "Select",
+   "label": "Niveau d'Implication",
+   "options": "Temps Plein\nPartiel\nConsultation"
+  }
+ ],
+ "istable": 1,
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "M&A Advisory",
+ "name": "Deal Team Member",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,12 @@
+include README.md
+include LICENSE
+include requirements.txt
+include pyproject.toml
+recursive-include ma_advisory *.py
+recursive-include ma_advisory *.json
+recursive-include ma_advisory *.js
+recursive-include ma_advisory *.css
+recursive-include ma_advisory *.html
+recursive-include ma_advisory *.md
+recursive-include ma_advisory *.csv
+recursive-include docs *.md

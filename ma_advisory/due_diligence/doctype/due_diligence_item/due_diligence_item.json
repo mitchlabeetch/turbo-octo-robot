@@ -1,0 +1,159 @@
+{
+ "actions": [],
+ "autoname": "format:DD-ITEM-{#####}",
+ "creation": "2024-01-01 00:00:00",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "deal",
+  "category",
+  "item_name",
+  "description",
+  "column_break_5",
+  "status",
+  "priority",
+  "assigned_to",
+  "section_break_9",
+  "due_date",
+  "completion_date",
+  "column_break_12",
+  "documents_required",
+  "documents_received",
+  "section_break_15",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "deal",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transaction",
+   "options": "Deal",
+   "reqd": 1
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Catégorie",
+   "options": "Financière\nJuridique\nCommerciale\nFiscale\nSociale/RH\nTechnologique/IT\nEnvironnementale\nAssurance\nImmobilière",
+   "reqd": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Élément",
+   "reqd": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Text",
+   "label": "Description"
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Statut",
+   "options": "À Faire\nEn Cours\nEn Attente\nTerminé\nBloqué\nNon Applicable",
+   "default": "À Faire",
+   "reqd": 1
+  },
+  {
+   "fieldname": "priority",
+   "fieldtype": "Select",
+   "label": "Priorité",
+   "options": "Basse\nMoyenne\nHaute\nCritique",
+   "default": "Moyenne"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigné à",
+   "options": "User"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Échéances"
+  },
+  {
+   "fieldname": "due_date",
+   "fieldtype": "Date",
+   "label": "Date d'Échéance"
+  },
+  {
+   "fieldname": "completion_date",
+   "fieldtype": "Date",
+   "label": "Date de Completion",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "documents_required",
+   "fieldtype": "Int",
+   "label": "Documents Requis",
+   "default": 0
+  },
+  {
+   "fieldname": "documents_received",
+   "fieldtype": "Int",
+   "label": "Documents Reçus",
+   "default": 0
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Notes et Documents"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Text Editor",
+   "label": "Notes"
+  }
+ ],
+ "modified": "2024-01-01 00:00:00",
+ "modified_by": "Administrator",
+ "module": "M&A Advisory",
+ "name": "Due Diligence Item",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "M&A Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "M&A Analyst",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "item_name",
+ "track_changes": 1
+}

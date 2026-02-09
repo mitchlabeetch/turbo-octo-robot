@@ -1,0 +1,26 @@
+{
+  "name": "ma_advisory",
+  "version": "1.0.0",
+  "description": "M&A Advisory ERP - French UI & White Label",
+  "main": "ma_advisory/public/js/ma_advisory.js",
+  "scripts": {
+    "build": "echo 'No build step required'",
+    "test": "echo 'Tests not configured yet'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mitchlabeetch/turbo-octo-robot.git"
+  },
+  "keywords": [
+    "erpnext",
+    "frappe",
+    "ma",
+    "mergers-acquisitions",
+    "french",
+    "white-label"
+  ],
+  "author": "Custom",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {}
+}
