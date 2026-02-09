@@ -18,22 +18,15 @@ def create_account(
     db: Session = Depends(get_db),
     _admin: User = Depends(require_role("admin"))
 ):
-    existing = db.query(Account.name, Account.code).filter(
+    existing_accounts = db.query(Account).filter(
         or_(Account.name == payload.name, Account.code == payload.code)
-    ).limit(2).all()
-    has_name = False
-    has_code = False
-    for name, code in existing:
-        if name == payload.name:
-            has_name = True
-        if code == payload.code:
-            has_code = True
-        if has_name and has_code:
-            break
-    if has_name or has_code:
-        if has_name and has_code:
+    ).all()
+    if existing_accounts:
+        name_exists = any(acc.name == payload.name for acc in existing_accounts)
+        code_exists = any(acc.code == payload.code for acc in existing_accounts)
+        if name_exists and code_exists:
             detail = "Account name and code already exist"
-        elif has_name:
+        elif name_exists:
             detail = "Account name already exists"
         else:
             detail = "Account code already exists"
