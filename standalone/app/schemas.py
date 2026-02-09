@@ -1,10 +1,14 @@
 from datetime import date
 from datetime import datetime
-from typing import Literal, Optional
+from typing import Optional
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
 
-CurrencyCode = Literal["USD", "EUR", "GBP", "JPY", "CAD"]
+from app.constants import ACCOUNT_TYPES, CURRENCY_CODES, INVOICE_STATUSES
+
+ACCOUNT_TYPE_PATTERN = "|".join(ACCOUNT_TYPES)
+INVOICE_STATUS_PATTERN = "|".join(INVOICE_STATUSES)
+CURRENCY_CODE_PATTERN = "|".join(CURRENCY_CODES)
 
 
 class TenantCreate(BaseModel):
@@ -23,7 +27,7 @@ class TenantOut(TenantCreate):
 class AccountCreate(BaseModel):
     name: str
     code: str
-    account_type: Literal["Asset", "Liability", "Equity", "Revenue", "Expense"]
+    account_type: str = Field(pattern=f"^({ACCOUNT_TYPE_PATTERN})$")
     description: Optional[str] = None
 
 
@@ -38,9 +42,9 @@ class AccountOut(AccountCreate):
 class InvoiceCreate(BaseModel):
     invoice_number: str
     customer_name: str
-    currency: CurrencyCode
-    total_amount_cents: int
-    status: Literal["Draft", "Sent", "Paid", "Overdue", "Cancelled"] = "Draft"
+    currency: str = Field(pattern=f"^({CURRENCY_CODE_PATTERN})$")
+    total_amount_cents: int = Field(ge=0)
+    status: str = Field(default="Draft", pattern=f"^({INVOICE_STATUS_PATTERN})$")
     issued_date: Optional[date] = None
     due_date: Optional[date] = None
 

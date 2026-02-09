@@ -2,7 +2,11 @@ from sqlalchemy import Boolean, CheckConstraint, Column, Date, DateTime, Foreign
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
+from app.constants import ACCOUNT_TYPES, INVOICE_STATUSES
 from app.db import Base
+
+ACCOUNT_TYPES_SQL = ", ".join(f"'{value}'" for value in ACCOUNT_TYPES)
+INVOICE_STATUSES_SQL = ", ".join(f"'{value}'" for value in INVOICE_STATUSES)
 
 
 class Company(Base):
@@ -132,7 +136,7 @@ class Account(Base):
     __tablename__ = "accounts"
     __table_args__ = (
         CheckConstraint(
-            "account_type IN ('Asset', 'Liability', 'Equity', 'Revenue', 'Expense')",
+            f"account_type IN ({ACCOUNT_TYPES_SQL})",
             name="ck_account_type",
         ),
     )
@@ -149,7 +153,7 @@ class Invoice(Base):
     __tablename__ = "invoices"
     __table_args__ = (
         CheckConstraint(
-            "status IN ('Draft', 'Sent', 'Paid', 'Overdue', 'Cancelled')",
+            f"status IN ({INVOICE_STATUSES_SQL})",
             name="ck_invoice_status",
         ),
         CheckConstraint("total_amount_cents >= 0", name="ck_invoice_amount_positive"),
