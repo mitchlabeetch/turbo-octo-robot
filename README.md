@@ -107,6 +107,8 @@ See [CODEBASE_ANALYSIS.md](CODEBASE_ANALYSIS.md) for detailed gap analysis and [
 - **[EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)** — Strategic recommendations and timeline
 - **[VISUAL_COMPARISON.md](VISUAL_COMPARISON.md)** — Feature matrix vs ERPNext/Strapi
 - **[MIGRATION_GUIDE.md](MIGRATION_GUIDE.md)** — Transitioning from Frappe-based implementation
+- **[STANDALONE_ERP_CMS_STRATEGY.md](STANDALONE_ERP_CMS_STRATEGY.md)** — Phased strategy for ERP+CMS delivery
+- **[PHASE_0_EXECUTION.md](PHASE_0_EXECUTION.md)** — Phase 0 execution tracker and deliverables
 - **[INSTALL.md](INSTALL.md)** — Deployment options (Docker, standalone, cloud)
 - **[API.md](docs/API_v2.md)** — Complete REST API reference
 

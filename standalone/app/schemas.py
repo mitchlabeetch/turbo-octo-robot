@@ -1,7 +1,81 @@
 from datetime import date, datetime
 from typing import Optional
 
-from pydantic import BaseModel, EmailStr
+from pydantic import BaseModel, EmailStr, Field
+
+from app.constants import ACCOUNT_TYPES, CURRENCY_CODES, INVOICE_STATUSES
+
+ACCOUNT_TYPE_PATTERN = "|".join(ACCOUNT_TYPES)
+INVOICE_STATUS_PATTERN = "|".join(INVOICE_STATUSES)
+CURRENCY_CODE_PATTERN = "|".join(CURRENCY_CODES)
+
+
+class TenantCreate(BaseModel):
+    name: str
+    slug: str
+
+
+class TenantOut(TenantCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class AccountCreate(BaseModel):
+    name: str
+    code: str
+    account_type: str = Field(pattern=f"^({ACCOUNT_TYPE_PATTERN})$")
+    description: Optional[str] = None
+
+
+class AccountOut(AccountCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class InvoiceCreate(BaseModel):
+    invoice_number: str
+    customer_name: str
+    currency: str = Field(pattern=f"^({CURRENCY_CODE_PATTERN})$")
+    total_amount_cents: int = Field(ge=0)
+    status: str = Field(default="Draft", pattern=f"^({INVOICE_STATUS_PATTERN})$")
+    issued_date: Optional[date] = None
+    due_date: Optional[date] = None
+
+
+class InvoiceOut(InvoiceCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class TenantSettingsBase(BaseModel):
+    brand_name: Optional[str] = None
+    logo_url: Optional[str] = None
+    primary_color: Optional[str] = None
+    locale: Optional[str] = None
+    timezone: Optional[str] = None
+
+
+class TenantSettingsCreate(TenantSettingsBase):
+    pass
+
+
+class TenantSettingsOut(TenantSettingsBase):
+    id: int
+    tenant_id: int
+    created_at: datetime
+    updated_at: datetime
+
+    class Config:
+        from_attributes = True
 
 
 class CompanyCreate(BaseModel):

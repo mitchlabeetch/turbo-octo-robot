@@ -1,8 +1,12 @@
-from sqlalchemy import Boolean, Column, Date, DateTime, ForeignKey, Integer, String, Text
+from sqlalchemy import Boolean, CheckConstraint, Column, Date, DateTime, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
+from app.constants import ACCOUNT_TYPES, INVOICE_STATUSES
 from app.db import Base
+
+ACCOUNT_TYPES_SQL = ", ".join(f"'{value}'" for value in ACCOUNT_TYPES)
+INVOICE_STATUSES_SQL = ", ".join(f"'{value}'" for value in INVOICE_STATUSES)
 
 
 class Company(Base):
@@ -115,3 +119,68 @@ class User(Base):
     role = Column(String(50), default="user")
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class Tenant(Base):
+    __tablename__ = "tenants"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(255), unique=True, nullable=False)
+    slug = Column(String(100), unique=True, nullable=False)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+    settings = relationship("TenantSettings", back_populates="tenant", uselist=False)
+
+
+class Account(Base):
+    __tablename__ = "accounts"
+    __table_args__ = (
+        CheckConstraint(
+            f"account_type IN ({ACCOUNT_TYPES_SQL})",
+            name="ck_account_type",
+        ),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(255), unique=True, nullable=False)
+    code = Column(String(50), unique=True, nullable=False)
+    account_type = Column(String(50), nullable=False)
+    description = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class Invoice(Base):
+    __tablename__ = "invoices"
+    __table_args__ = (
+        CheckConstraint(
+            f"status IN ({INVOICE_STATUSES_SQL})",
+            name="ck_invoice_status",
+        ),
+        CheckConstraint("total_amount_cents >= 0", name="ck_invoice_amount_positive"),
+    )
+
+    id = Column(Integer, primary_key=True, index=True)
+    invoice_number = Column(String(50), unique=True, nullable=False)
+    customer_name = Column(String(255), nullable=False)
+    currency = Column(String(10), nullable=False)
+    total_amount_cents = Column(Integer, nullable=False)
+    status = Column(String(50), default="Draft")
+    issued_date = Column(Date, nullable=True)
+    due_date = Column(Date, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class TenantSettings(Base):
+    __tablename__ = "tenant_settings"
+
+    id = Column(Integer, primary_key=True, index=True)
+    tenant_id = Column(Integer, ForeignKey("tenants.id"), unique=True, nullable=False)
+    brand_name = Column(String(255), nullable=True)
+    logo_url = Column(String(500), nullable=True)
+    primary_color = Column(String(50), nullable=True)
+    locale = Column(String(50), nullable=True)
+    timezone = Column(String(50), nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    updated_at = Column(DateTime(timezone=True), server_default=func.now(), onupdate=func.now())
+
+    tenant = relationship("Tenant", back_populates="settings")
