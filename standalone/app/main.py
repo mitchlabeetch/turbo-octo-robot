@@ -3,7 +3,23 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.config import settings
 from app.db import Base, engine
-from app.routers import auth, companies, contacts, documents, email, interactions, oauth, shares, export, import_, audit, tenants, tenant_settings
+from app.routers import (
+    accounts,
+    audit,
+    auth,
+    companies,
+    contacts,
+    documents,
+    email,
+    export,
+    import_,
+    interactions,
+    invoices,
+    oauth,
+    shares,
+    tenant_settings,
+    tenants,
+)
 from app.storage import ensure_storage_dir
 
 
@@ -28,6 +44,8 @@ app.include_router(auth.router, prefix="/auth", tags=["auth"])
 app.include_router(oauth.router, prefix="/oauth", tags=["oauth"])
 app.include_router(tenants.router, prefix="/tenants", tags=["tenants"])
 app.include_router(tenant_settings.router, tags=["tenant-settings"])
+app.include_router(accounts.router, prefix="/accounts", tags=["accounts"])
+app.include_router(invoices.router, prefix="/invoices", tags=["invoices"])
 app.include_router(export.router, tags=["export"])
 app.include_router(import_.router, tags=["import"])
 app.include_router(audit.router)

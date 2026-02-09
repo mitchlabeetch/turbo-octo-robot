@@ -128,6 +128,31 @@ class Tenant(Base):
     settings = relationship("TenantSettings", back_populates="tenant", uselist=False)
 
 
+class Account(Base):
+    __tablename__ = "accounts"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String(255), unique=True, nullable=False)
+    code = Column(String(50), unique=True, nullable=False)
+    account_type = Column(String(50), nullable=False)
+    description = Column(Text, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
+class Invoice(Base):
+    __tablename__ = "invoices"
+
+    id = Column(Integer, primary_key=True, index=True)
+    invoice_number = Column(String(50), unique=True, nullable=False)
+    customer_name = Column(String(255), nullable=False)
+    currency = Column(String(10), nullable=False)
+    total_amount_cents = Column(Integer, nullable=False)
+    status = Column(String(50), default="Draft")
+    issued_date = Column(Date, nullable=True)
+    due_date = Column(Date, nullable=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+
+
 class TenantSettings(Base):
     __tablename__ = "tenant_settings"
 

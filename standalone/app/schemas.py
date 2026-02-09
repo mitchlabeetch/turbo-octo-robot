@@ -18,6 +18,39 @@ class TenantOut(TenantCreate):
         from_attributes = True
 
 
+class AccountCreate(BaseModel):
+    name: str
+    code: str
+    account_type: str
+    description: Optional[str] = None
+
+
+class AccountOut(AccountCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class InvoiceCreate(BaseModel):
+    invoice_number: str
+    customer_name: str
+    currency: str
+    total_amount_cents: int
+    status: str = "Draft"
+    issued_date: Optional[date] = None
+    due_date: Optional[date] = None
+
+
+class InvoiceOut(InvoiceCreate):
+    id: int
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
 class TenantSettingsBase(BaseModel):
     brand_name: Optional[str] = None
     logo_url: Optional[str] = None
