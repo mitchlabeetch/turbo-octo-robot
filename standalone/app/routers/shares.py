@@ -22,6 +22,16 @@ router = APIRouter()
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 
+def _is_expired(expires_at) -> bool:
+    """Check if datetime is expired, handling both tz-aware and tz-naive."""
+    if expires_at is None:
+        return False
+    now = datetime.now(timezone.utc)
+    if expires_at.tzinfo is None:
+        expires_at = expires_at.replace(tzinfo=timezone.utc)
+    return expires_at < now
+
+
 @router.post("/documents/{document_id}", response_model=ShareOut)
 def create_share(
     document_id: int,
@@ -64,9 +74,7 @@ def get_share_info(token: str, db: Session = Depends(get_db)):
     if not share:
         raise HTTPException(status_code=404, detail="Share not found")
 
-    expired = False
-    if share.expires_at and share.expires_at < datetime.now(timezone.utc):
-        expired = True
+    expired = _is_expired(share.expires_at)
 
     doc = db.query(Document).filter(Document.id == share.document_id).first()
     if not doc:
@@ -97,7 +105,7 @@ def confirm_nda(
     if not share.requires_nda:
         raise HTTPException(status_code=400, detail="NDA not required for this share")
 
-    if share.expires_at and share.expires_at < datetime.now(timezone.utc):
+    if _is_expired(share.expires_at):
         raise HTTPException(status_code=410, detail="Share expired")
 
     # Mark NDA as confirmed
@@ -129,7 +137,7 @@ def download_share(
     if not share:
         raise HTTPException(status_code=404, detail="Share not found")
 
-    if share.expires_at and share.expires_at < datetime.now(timezone.utc):
+    if _is_expired(share.expires_at):
         raise HTTPException(status_code=410, detail="Share expired")
 
     # Check NDA confirmation if required

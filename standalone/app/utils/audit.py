@@ -2,6 +2,7 @@
 
 from datetime import datetime
 from typing import List, Dict, Any, Optional
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 from ..models import AccessLog, DocumentShare, Document
 
@@ -35,13 +36,13 @@ def get_share_audit_logs(
     """Get all access logs for a share."""
     logs = db.query(AccessLog).filter(
         AccessLog.share_id == share_id
-    ).order_by(AccessLog.accessed_at.desc()).limit(limit).all()
+    ).order_by(AccessLog.created_at.desc()).limit(limit).all()
     
     return [
         {
             'id': log.id,
             'action': log.action,
-            'accessed_at': log.accessed_at.isoformat() if log.accessed_at else None,
+            'accessed_at': log.created_at.isoformat() if log.created_at else None,
             'ip_address': log.ip_address,
             'user_agent': log.user_agent,
             'accessed_by_email': log.accessed_by_email
@@ -60,14 +61,14 @@ def get_document_audit_logs(
         DocumentShare
     ).filter(
         DocumentShare.document_id == document_id
-    ).order_by(AccessLog.accessed_at.desc()).limit(limit).all()
+    ).order_by(AccessLog.created_at.desc()).limit(limit).all()
     
     return [
         {
             'id': log.id,
             'share_id': log.share_id,
             'action': log.action,
-            'accessed_at': log.accessed_at.isoformat() if log.accessed_at else None,
+            'accessed_at': log.created_at.isoformat() if log.created_at else None,
             'ip_address': log.ip_address,
             'user_agent': log.user_agent,
             'accessed_by_email': log.accessed_by_email
@@ -87,16 +88,16 @@ def get_audit_summary(db: Session) -> Dict[str, Any]:
     most_accessed = db.query(
         AccessLog.share_id,
         Document.document_name,
-        db.func.count(AccessLog.id).label('access_count')
+        func.count(AccessLog.id).label('access_count')
+    ).select_from(AccessLog).join(
+        DocumentShare, AccessLog.share_id == DocumentShare.id
     ).join(
-        DocumentShare
-    ).join(
-        Document
+        Document, DocumentShare.document_id == Document.id
     ).group_by(
         AccessLog.share_id,
         Document.document_name
     ).order_by(
-        db.func.count(AccessLog.id).desc()
+        func.count(AccessLog.id).desc()
     ).limit(10).all()
     
     return {

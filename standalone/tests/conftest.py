@@ -83,3 +83,32 @@ def auth_client(client, auth_headers):
     """Convenience: a test client pre-configured with auth headers."""
     client.headers.update(auth_headers)
     return client
+
+
+# admin_client is an alias: test_user already has role="admin"
+admin_client = auth_client
+
+
+@pytest.fixture(scope="function")
+def regular_user(db_session) -> User:
+    """Create a non-admin user."""
+    user = User(
+        email="regular@example.com",
+        full_name="Regular User",
+        hashed_password=hash_password("pass123"),
+        role="user",
+        is_active=True,
+        tenant_id="default",
+    )
+    db_session.add(user)
+    db_session.commit()
+    db_session.refresh(user)
+    return user
+
+
+@pytest.fixture(scope="function")
+def regular_auth_client(client, regular_user):
+    """Test client with non-admin user authentication."""
+    token = create_access_token(subject=regular_user.email, role=regular_user.role)
+    client.headers.update({"Authorization": f"Bearer {token}"})
+    return client
