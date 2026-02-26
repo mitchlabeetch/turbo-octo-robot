@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
+from typing import List
 
 from app.auth import get_current_user
 from app.db import get_db
@@ -21,3 +22,11 @@ def create_interaction(
     db.commit()
     db.refresh(interaction)
     return interaction
+
+
+@router.get("", response_model=List[InteractionOut])
+def list_interactions(
+    db: Session = Depends(get_db),
+    _user=Depends(get_current_user)
+):
+    return db.query(Interaction).limit(100).all()
